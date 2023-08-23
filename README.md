@@ -6,12 +6,12 @@ What can you do?
 
 You already have:
 
- - Move
+ > Move
 
- - Use the telekinesis
+ > Use the telekinesis
 
- - Use the shield
+ > Use the shield
 
- - Somesaults
+ > Somesaults
 
 Done! Yet...
