@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnqyu7dx0cva8"]
+
+[ext_resource type="Texture2D" uid="uid://bg6vkhxfswo54" path="res://Sprites/Spells Icons/Telekinesis.svg" id="1_boxx7"]
+[ext_resource type="Texture2D" uid="uid://cbyat4afs4rce" path="res://Sprites/Spells Icons/Choosed.svg" id="1_sydun"]
+[ext_resource type="Texture2D" uid="uid://digijec84eriw" path="res://Sprites/Spells Icons/Fireball.svg" id="2_6lfal"]
+[ext_resource type="LabelSettings" uid="uid://dlnxs58lapeiv" path="res://Fonts/ui_font.tres" id="2_cson4"]
+[ext_resource type="Texture2D" uid="uid://bqgnr527q6ujn" path="res://Sprites/Spells Icons/Blizzard.svg" id="3_kafpj"]
+[ext_resource type="Texture2D" uid="uid://bd6ydje0lll7k" path="res://Sprites/Spells Icons/Healing.svg" id="4_d7xgq"]
+[ext_resource type="Texture2D" uid="uid://dohin4f6hrwwx" path="res://Sprites/Spells Icons/Teleport.svg" id="5_ssp5d"]
+[ext_resource type="Texture2D" uid="uid://berjluop6f3vc" path="res://Sprites/Spells Icons/Firewall.svg" id="6_d8i4r"]
+[ext_resource type="Texture2D" uid="uid://d250e55eedeuj" path="res://Sprites/Spells Icons/Shield.svg" id="7_27dav"]
+[ext_resource type="Texture2D" uid="uid://b2jbhlfd5jsbi" path="res://Sprites/Spells Icons/Summon Bat.svg" id="7_d7lmh"]
+
+[node name="Spellbook" type="CanvasLayer"]
+
+[node name="Choosed" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 544.0
+offset_right = 72.0
+offset_bottom = 584.0
+
+[node name="Offset" type="TextureRect" parent="Choosed"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 72.0
+offset_bottom = 72.0
+texture = ExtResource("1_sydun")
+expand_mode = 1
+
+[node name="Telekinesis" type="TextureRect" parent="."]
+offset_left = 32.0
+offset_top = 544.0
+offset_right = 96.0
+offset_bottom = 608.0
+texture = ExtResource("1_boxx7")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Telekinesis"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "1"
+label_settings = ExtResource("2_cson4")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Fireball" type="TextureRect" parent="."]
+offset_left = 96.0
+offset_top = 544.0
+offset_right = 160.0
+offset_bottom = 608.0
+texture = ExtResource("2_6lfal")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Fireball"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "2"
+label_settings = ExtResource("2_cson4")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Healing" type="TextureRect" parent="."]
+offset_left = 160.0
+offset_top = 544.0
+offset_right = 224.0
+offset_bottom = 608.0
+texture = ExtResource("4_d7xgq")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Healing"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "3"
+label_settings = ExtResource("2_cson4")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Teleport" type="TextureRect" parent="."]
+offset_left = 224.0
+offset_top = 544.0
+offset_right = 288.0
+offset_bottom = 608.0
+texture = ExtResource("5_ssp5d")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Teleport"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "4"
+label_settings = ExtResource("2_cson4")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Blizzard" type="TextureRect" parent="."]
+offset_left = 288.0
+offset_top = 544.0
+offset_right = 352.0
+offset_bottom = 608.0
+texture = ExtResource("3_kafpj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Blizzard"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "5"
+label_settings = ExtResource("2_cson4")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Firewall" type="TextureRect" parent="."]
+offset_left = 352.0
+offset_top = 544.0
+offset_right = 416.0
+offset_bottom = 608.0
+texture = ExtResource("6_d8i4r")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Firewall"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "6"
+label_settings = ExtResource("2_cson4")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Summon Bat" type="TextureRect" parent="."]
+offset_left = 416.0
+offset_top = 544.0
+offset_right = 480.0
+offset_bottom = 608.0
+texture = ExtResource("7_d7lmh")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Summon Bat"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "7"
+label_settings = ExtResource("2_cson4")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Shield" type="TextureRect" parent="."]
+offset_left = 480.0
+offset_top = 544.0
+offset_right = 544.0
+offset_bottom = 608.0
+texture = ExtResource("7_27dav")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Shield"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "Shift"
+label_settings = ExtResource("2_cson4")
+horizontal_alignment = 2
+vertical_alignment = 2

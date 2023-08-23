@@ -1,0 +1,178 @@
+[gd_scene load_steps=14 format=3 uid="uid://c8h7olbog7o4x"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Mark/mark.gd" id="1_1nckv"]
+[ext_resource type="Texture2D" uid="uid://b0n1nmejsjmhx" path="res://Sprites/Mark/Body/Idle.svg" id="2_xqr8n"]
+[ext_resource type="Texture2D" uid="uid://dp2cgt1h5nuvm" path="res://Sprites/Mark/Body/Walk.svg" id="3_hmmf8"]
+[ext_resource type="Texture2D" uid="uid://dnqodv7sq7prk" path="res://Sprites/Mark/Somersaults.svg" id="3_lee5y"]
+[ext_resource type="Texture2D" uid="uid://dyc0hxykwr8ur" path="res://Sprites/Mark/Shield.svg" id="5_4p4qg"]
+[ext_resource type="Texture2D" uid="uid://cqu8x5coxyurr" path="res://Sprites/Mark/Hand/Idle.svg" id="5_8oid6"]
+[ext_resource type="Texture2D" uid="uid://cgghkaspae67d" path="res://Sprites/Mark/Hand/Spelling.svg" id="6_c8fu5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pghw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xqr8n")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xqr8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hmmf8")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7x5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8oid6")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_c8fu5")
+}],
+"loop": true,
+"name": &"Spelling",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vq01"]
+size = Vector2(24, 24)
+
+[sub_resource type="Animation" id="Animation_oq2fr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Somersaults:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Somersaults:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hhn7d"]
+resource_name = "Somersaults"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Somersaults:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Somersaults:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 12.5664]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u355u"]
+_data = {
+"RESET": SubResource("Animation_oq2fr"),
+"Somersaults": SubResource("Animation_hhn7d")
+}
+
+[node name="Mark" type="CharacterBody2D"]
+script = ExtResource("1_1nckv")
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.128, -15.744)
+scale = Vector2(0.063, 0.063)
+sprite_frames = SubResource("SpriteFrames_3pghw")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.638889
+
+[node name="Somersaults" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("3_lee5y")
+offset = Vector2(0, -256)
+
+[node name="Hand" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.063, 0.063)
+sprite_frames = SubResource("SpriteFrames_a7x5x")
+animation = &"Idle"
+offset = Vector2(0, -256)
+
+[node name="Shield" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 16)
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("5_4p4qg")
+offset = Vector2(0, -256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6vq01")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u355u")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]

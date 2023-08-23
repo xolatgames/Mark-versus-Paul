@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dlnxs58lapeiv"]
+
+[ext_resource type="FontFile" uid="uid://c0jvyylxt2u2s" path="res://Fonts/tenderness.otf" id="1_unilr"]
+
+[resource]
+font = ExtResource("1_unilr")
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.490196)
+shadow_offset = Vector2(2, 2)

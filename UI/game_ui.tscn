@@ -1,0 +1,155 @@
+[gd_scene load_steps=13 format=3 uid="uid://vvf028rd583w"]
+
+[ext_resource type="Script" path="res://Scripts/Game UI/game_ui.gd" id="1_hbv0l"]
+[ext_resource type="Texture2D" uid="uid://7mdqc7j2uv28" path="res://Sprites/Game UI/Icons/Health.svg" id="2_wbaq1"]
+[ext_resource type="Texture2D" uid="uid://c14p1ofro0deh" path="res://Sprites/Game UI/Bars/Hollow.svg" id="3_dq5qr"]
+[ext_resource type="Texture2D" uid="uid://jw6oysblyhpb" path="res://Sprites/Game UI/Bars/Health.svg" id="4_670in"]
+[ext_resource type="Texture2D" uid="uid://gfsdclaood04" path="res://Sprites/Game UI/Icons/Mana.svg" id="5_kaopt"]
+[ext_resource type="Texture2D" uid="uid://d2xfgex0i7xq" path="res://Sprites/Game UI/Bars/Mana.svg" id="6_vq1y5"]
+[ext_resource type="Texture2D" uid="uid://c1ymlryu0hr2g" path="res://Sprites/Game UI/Icons/Experience.svg" id="7_wkgwp"]
+[ext_resource type="Texture2D" uid="uid://c07ltvbikmhke" path="res://Sprites/Game UI/Bars/Experience.svg" id="8_nrd2e"]
+[ext_resource type="Texture2D" uid="uid://c5tx3jt31sn1y" path="res://Sprites/Game UI/Counter.svg" id="9_v4yw5"]
+[ext_resource type="LabelSettings" uid="uid://dlnxs58lapeiv" path="res://Fonts/ui_font.tres" id="10_k1ith"]
+[ext_resource type="Texture2D" uid="uid://cocebr2lpc5qv" path="res://Sprites/Game UI/Icons/Milk Counter.svg" id="11_6fr25"]
+[ext_resource type="PackedScene" uid="uid://bnqyu7dx0cva8" path="res://UI/spellbook.tscn" id="12_6jo34"]
+
+[node name="Game UI" type="CanvasLayer"]
+script = ExtResource("1_hbv0l")
+
+[node name="Health Stat" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Health Stat"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_wbaq1")
+expand_mode = 1
+
+[node name="Bar" type="TextureProgressBar" parent="Health Stat"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 32.0
+offset_right = 208.0
+offset_bottom = 64.0
+max_value = 1.0
+step = 0.01
+nine_patch_stretch = true
+texture_under = ExtResource("3_dq5qr")
+texture_progress = ExtResource("4_670in")
+
+[node name="Mana Stat" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Mana Stat"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 80.0
+offset_right = 64.0
+offset_bottom = 112.0
+texture = ExtResource("5_kaopt")
+expand_mode = 1
+
+[node name="Bar" type="TextureProgressBar" parent="Mana Stat"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 208.0
+offset_bottom = 112.0
+max_value = 1.0
+step = 0.01
+nine_patch_stretch = true
+texture_under = ExtResource("3_dq5qr")
+texture_progress = ExtResource("6_vq1y5")
+
+[node name="Experience Stat" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="TextureRect" parent="Experience Stat"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 64.0
+offset_bottom = 160.0
+texture = ExtResource("7_wkgwp")
+expand_mode = 1
+
+[node name="Bar" type="TextureProgressBar" parent="Experience Stat"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 128.0
+offset_right = 208.0
+offset_bottom = 160.0
+max_value = 1.0
+step = 0.01
+nine_patch_stretch = true
+texture_under = ExtResource("3_dq5qr")
+texture_progress = ExtResource("8_nrd2e")
+
+[node name="Level Indicator" type="TextureRect" parent="Experience Stat"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 224.0
+offset_bottom = 160.0
+texture = ExtResource("9_v4yw5")
+expand_mode = 1
+
+[node name="Level" type="Label" parent="Experience Stat"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 224.0
+offset_bottom = 160.0
+text = "0"
+label_settings = ExtResource("10_k1ith")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Items Stat" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Milk Counter Icon" type="TextureRect" parent="Items Stat"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 64.0
+texture = ExtResource("11_6fr25")
+expand_mode = 1
+
+[node name="Milk Indicator" type="TextureRect" parent="Items Stat"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 288.0
+offset_bottom = 64.0
+texture = ExtResource("9_v4yw5")
+expand_mode = 1
+
+[node name="Milk Counter" type="Label" parent="Items Stat"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 288.0
+offset_bottom = 64.0
+text = "0"
+label_settings = ExtResource("10_k1ith")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spellbook" parent="." instance=ExtResource("12_6jo34")]
