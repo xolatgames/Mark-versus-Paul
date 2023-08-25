@@ -8,9 +8,7 @@ You already have:
 
  > Move
 
- > Use the telekinesis
-
- > Use the shield
+ > Use everyone of the spells and shield also
 
  > Somesaults
 
