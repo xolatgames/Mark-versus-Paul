@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv6gj26ilya5n"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Spells/bat.gd" id="1_bissd"]
+[ext_resource type="Texture2D" uid="uid://j8j7qqma8a1h" path="res://Sprites/Spells Entities/Bat.svg" id="1_m6xot"]
+[ext_resource type="Texture2D" uid="uid://c84b08c8nqv1y" path="res://Sprites/Spells Entities/Bat frame 2.svg" id="2_j55bx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bvcfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m6xot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_j55bx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78ixv"]
+size = Vector2(26, 26)
+
+[node name="Bat" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_bissd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = SubResource("SpriteFrames_bvcfw")
+autoplay = "default"
+frame_progress = 0.945059
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_78ixv")
+
+[node name="Change Direction" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Change Direction" to="." method="_on_change_direction_timeout"]

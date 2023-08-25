@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://sd8bx6ittxt3"]
+
+[ext_resource type="Texture2D" uid="uid://17ddmf7463kx" path="res://Sprites/Spells Entities/Telekinesis.svg" id="1_33sha"]
+
+[sub_resource type="Gradient" id="Gradient_10dly"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_833wo"]
+gradient = SubResource("Gradient_10dly")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nps53"]
+emission_shape = 3
+emission_box_extents = Vector3(16, 16, 16)
+particle_flag_disable_z = true
+gravity = Vector3(0, -98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.02
+scale_max = 0.02
+color_ramp = SubResource("GradientTexture1D_833wo")
+
+[node name="Pickable" type="GPUParticles2D"]
+process_material = SubResource("ParticleProcessMaterial_nps53")
+texture = ExtResource("1_33sha")

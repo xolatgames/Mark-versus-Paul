@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8h7olbog7o4x"]
+[gd_scene load_steps=15 format=3 uid="uid://c8h7olbog7o4x"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Mark/mark.gd" id="1_1nckv"]
 [ext_resource type="Texture2D" uid="uid://b0n1nmejsjmhx" path="res://Sprites/Mark/Body/Idle.svg" id="2_xqr8n"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dyc0hxykwr8ur" path="res://Sprites/Mark/Shield.svg" id="5_4p4qg"]
 [ext_resource type="Texture2D" uid="uid://cqu8x5coxyurr" path="res://Sprites/Mark/Hand/Idle.svg" id="5_8oid6"]
 [ext_resource type="Texture2D" uid="uid://cgghkaspae67d" path="res://Sprites/Mark/Hand/Spelling.svg" id="6_c8fu5"]
+[ext_resource type="PackedScene" uid="uid://bdd42jtxs1fir" path="res://Entities/Spells/healing.tscn" id="8_cw4xx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3pghw"]
 animations = [{
@@ -176,3 +177,6 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Healing" parent="." instance=ExtResource("8_cw4xx")]
+visible = false

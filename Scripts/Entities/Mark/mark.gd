@@ -3,7 +3,7 @@ extends CastSpells
 var speed = 100
 var flip = "right"
 var somersaults = false
-var somersaultsDelay = false
+var somersaults_delay = false
 var acceleration = 4
 
 
@@ -23,7 +23,7 @@ or Input.is_action_pressed("down"):
 		$Body.play("Idle")
 	
 	if Input.is_action_just_pressed("somersaults"):
-		if !somersaultsDelay and velocity != Vector2.ZERO:
+		if !somersaults_delay and velocity != Vector2.ZERO:
 			doSomersaults()
 	
 	if somersaults:
@@ -35,7 +35,6 @@ or Input.is_action_pressed("down"):
 	
 	if somersaults:
 		shield_is_activated = false
-		GameStats.already_spelling = false
 	
 	if GameStats.already_spelling:
 		$Hand.play("Spelling")
@@ -58,13 +57,15 @@ func _physics_process(delta):
 			velocity.y = speed
 	
 	move_and_slide()
+	
+	manaRestore()
 
 
 func doSomersaults():
 	somersaults = true
 	velocity *= acceleration
-	somersaultsDelay = true
+	somersaults_delay = true
 	await get_tree().create_timer(0.5).timeout
 	somersaults = false
 	await get_tree().create_timer(2).timeout
-	somersaultsDelay = false
+	somersaults_delay = false

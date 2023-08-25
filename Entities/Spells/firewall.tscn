@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://e2unmgwgak1j"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Spells/firewall.gd" id="1_o0a0n"]
+[ext_resource type="Texture2D" uid="uid://mdcp3n7jnmyv" path="res://Sprites/Spells Entities/Fire.svg" id="2_eo1kb"]
+[ext_resource type="Texture2D" uid="uid://cp6radixniqpr" path="res://Sprites/Spells Entities/Fire frame 2.svg" id="3_f4bg5"]
+[ext_resource type="Texture2D" uid="uid://dtalviqie72k3" path="res://Textures/Light.svg" id="4_ss5re"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbvf8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eo1kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f4bg5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3m8e"]
+
+[sub_resource type="Animation" id="Animation_oa3u5"]
+resource_name = "Fade"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nqd65"]
+_data = {
+"Fade": SubResource("Animation_oa3u5")
+}
+
+[node name="Firewall" type="Area2D"]
+script = ExtResource("1_o0a0n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = SubResource("SpriteFrames_lbvf8")
+autoplay = "default"
+frame_progress = 0.776582
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w3m8e")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-3.8147e-06, -3.8147e-06)
+scale = Vector2(0.5, 0.5)
+shadow_enabled = true
+texture = ExtResource("4_ss5re")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Fade"
+libraries = {
+"": SubResource("AnimationLibrary_nqd65")
+}

@@ -1,12 +1,25 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dyuaj2bnlk2f4"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dyuaj2bnlk2f4"]
 
+[ext_resource type="Texture2D" uid="uid://ceyij0bs1ocqd" path="res://Sprites/Environment/Tree.svg" id="1_3xtum"]
 [ext_resource type="Texture2D" uid="uid://cmbo1kd787ynt" path="res://Sprites/Backgrounds/Grass.svg" id="1_wdp5t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pbnq6"]
+texture = ExtResource("1_3xtum")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-192, -192, 192, -192, 192, 192, -192, 192)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m62nc"]
 texture = ExtResource("1_wdp5t")
 texture_region_size = Vector2i(512, 512)
 0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [resource]
 tile_size = Vector2i(512, 512)
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_m62nc")
+sources/0 = SubResource("TileSetAtlasSource_pbnq6")

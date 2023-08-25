@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+
 class_name Spellbook
 
 

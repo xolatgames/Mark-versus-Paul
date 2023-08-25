@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddu56rt1pnwib"]
+[gd_scene load_steps=5 format=3 uid="uid://ddu56rt1pnwib"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/crate.gd" id="1_00v4v"]
 [ext_resource type="Texture2D" uid="uid://dkxryynu3aw57" path="res://Sprites/Environment/Crate.svg" id="2_xulbc"]
+[ext_resource type="PackedScene" uid="uid://sd8bx6ittxt3" path="res://Entities/Spells/pickable.tscn" id="3_rrabp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vli15"]
 size = Vector2(24, 24)
@@ -19,5 +20,8 @@ texture = ExtResource("2_xulbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vli15")
+
+[node name="Pickable" parent="." instance=ExtResource("3_rrabp")]
+visible = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
