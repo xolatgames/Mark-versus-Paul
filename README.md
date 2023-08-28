@@ -2,7 +2,7 @@
 
 The action-adventure game where you play as Mark. Youre the wizard and can spell a magic.
 
-<video src="https://youtu.be/I3OCFq5mwXc" width=480/>
+<video src="https://youtu.be/I3OCFq5mwXc" width=360/>
 
 What can you do?
 
