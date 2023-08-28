@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://ve6c50i5pk3b"]
+
+[ext_resource type="Texture2D" uid="uid://be8h815jjkooc" path="res://Textures/Panel.svg" id="1_3p75h"]
+[ext_resource type="FontFile" uid="uid://c0jvyylxt2u2s" path="res://Fonts/tenderness.otf" id="1_f2upy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qdnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_llwpx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4vjdl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5n4ke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ftame"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_01n76"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xn8gn"]
+texture = ExtResource("1_3p75h")
+modulate_color = Color(1, 1, 1, 0.490196)
+
+[resource]
+default_font = ExtResource("1_f2upy")
+default_font_size = 36
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0, 1, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 0, 1)
+Button/constants/outline_size = 4
+Button/styles/focus = SubResource("StyleBoxEmpty_1qdnv")
+Button/styles/hover = SubResource("StyleBoxEmpty_llwpx")
+Button/styles/normal = SubResource("StyleBoxEmpty_4vjdl")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5n4ke")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 4
+LineEdit/colors/font_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/constants/outline_size = 4
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_ftame")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_01n76")
+Panel/styles/panel = SubResource("StyleBoxTexture_xn8gn")

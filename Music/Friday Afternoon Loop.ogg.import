@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cfgiqweuwaame"
+path="res://.godot/imported/Friday Afternoon Loop.ogg-5ea29361c24c873d7eccc363e65b2c7c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Friday Afternoon Loop.ogg"
+dest_files=["res://.godot/imported/Friday Afternoon Loop.ogg-5ea29361c24c873d7eccc363e65b2c7c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

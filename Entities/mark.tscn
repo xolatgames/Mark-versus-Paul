@@ -139,6 +139,7 @@ _data = {
 }
 
 [node name="Mark" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_1nckv")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
@@ -179,4 +180,4 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Healing" parent="." instance=ExtResource("8_cw4xx")]
-visible = false
+emitting = false

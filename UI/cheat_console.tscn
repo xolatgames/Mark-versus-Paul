@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://0cvq7q4vq2fv"]
+
+[node name="Cheat Console" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 72.0
+text = "Cheat Code: "
+
+[node name="Enter the Code" type="LineEdit" parent="."]
+offset_left = 224.0
+offset_top = 24.0
+offset_right = 512.0
+offset_bottom = 69.0

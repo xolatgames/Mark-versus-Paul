@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bo3d18fy1ren4"
+path="res://.godot/imported/Laser Quest Loop.ogg-a3dc970f04ddbf265245d2d7e422f065.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Laser Quest Loop.ogg"
+dest_files=["res://.godot/imported/Laser Quest Loop.ogg-a3dc970f04ddbf265245d2d7e422f065.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

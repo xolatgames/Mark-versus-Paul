@@ -15,24 +15,19 @@ func castingSpells():
 	else:
 		$Shield.hide()
 	
-	if Input.is_action_pressed("shield"):
-		if !GameStats.already_spelling:
-			shield_is_activated = true
-			takeABreath(0.1)
+	if GameStats.opened_spells.has("shield") and Input.is_action_pressed("shield") and !GameStats.already_spelling:
+		shield_is_activated = true
+		takeABreath(0.1)
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if !GameStats.already_spelling:
 			match GameStats.choosed_spell:
 				2:
-					var fireball = load("res://Entities/Spells/fireball.tscn")
-					fireball = fireball.instantiate()
-					fireball.global_position = global_position
-					fireball.look_at(get_viewport().get_camera_2d().get_local_mouse_position())
-					get_tree().current_scene.add_child(fireball)
+					spawnTheFireball()
 					takeABreath(0.2)
 				3:
 					if GameStats.mana > 3:
-						$Healing.show()
+						$Healing.emitting = true
 						GameStats.health += 1
 						GameStats.mana -= 2
 						takeABreath(0.1)
@@ -47,27 +42,18 @@ func castingSpells():
 				5:
 					if GameStats.mana > 3:
 						if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
-							var blizzard = load("res://Entities/Spells/blizzard.tscn")
-							blizzard = blizzard.instantiate()
-							blizzard.global_position = get_viewport().get_camera_2d().get_global_mouse_position()
-							get_tree().current_scene.add_child(blizzard)
+							spawnTheBlizzard()
 							GameStats.mana -= 2
 							takeABreath(0.2)
 				6:
 					if GameStats.mana > 1:
 						if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
-							var firewall = load("res://Entities/Spells/firewall.tscn")
-							firewall = firewall.instantiate()
-							firewall.global_position = get_viewport().get_camera_2d().get_global_mouse_position()
-							get_tree().current_scene.add_child(firewall)
+							spawnTheFirewall()
 							GameStats.mana -= 0.5
 							takeABreath(0.05)
 				7:
 					if GameStats.mana > 26:
-						var bat = load("res://Entities/Spells/bat.tscn")
-						bat = bat.instantiate()
-						bat.global_position = global_position
-						get_tree().current_scene.add_child(bat)
+						summonTheBat()
 						GameStats.mana -= 25
 						takeABreath(5)
 
@@ -84,7 +70,7 @@ func hideEffects():
 		shield_is_activated = false
 	
 	if !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or !GameStats.choosed_spell == 3:
-		$Healing.hide()
+		$Healing.emitting = false
 
 
 func showTeleport():
@@ -96,3 +82,32 @@ func showTeleport():
 
 func manaRestore():
 	GameStats.mana += 1.0 / mana_restore_speed
+
+
+func spawnTheFireball():
+	var fireball = load("res://Entities/Spells/fireball.tscn")
+	fireball = fireball.instantiate()
+	fireball.global_position = global_position
+	fireball.look_at(get_viewport().get_camera_2d().get_local_mouse_position())
+	get_tree().current_scene.add_child(fireball)
+
+
+func spawnTheBlizzard():
+	var blizzard = load("res://Entities/Spells/blizzard.tscn")
+	blizzard = blizzard.instantiate()
+	blizzard.global_position = get_viewport().get_camera_2d().get_global_mouse_position()
+	get_tree().current_scene.add_child(blizzard)
+
+
+func spawnTheFirewall():
+	var firewall = load("res://Entities/Spells/firewall.tscn")
+	firewall = firewall.instantiate()
+	firewall.global_position = get_viewport().get_camera_2d().get_global_mouse_position()
+	get_tree().current_scene.add_child(firewall)
+
+
+func summonTheBat():
+	var bat = load("res://Entities/Spells/bat.tscn")
+	bat = bat.instantiate()
+	bat.global_position = global_position
+	get_tree().current_scene.add_child(bat)

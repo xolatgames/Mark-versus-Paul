@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b33gbasv6jh17"
+path="res://.godot/imported/8Bit Mini Gamer Loop.ogg-e19a9067f21eb2d7146298a628c6a526.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/8Bit Mini Gamer Loop.ogg"
+dest_files=["res://.godot/imported/8Bit Mini Gamer Loop.ogg-e19a9067f21eb2d7146298a628c6a526.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

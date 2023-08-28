@@ -13,3 +13,7 @@ var choosed_spell = 1
 var opened_spells = []
 var mark_position = Vector2.ZERO
 var already_spelling = false
+
+
+func spells():
+	opened_spells = ["telekinesis", "fireball", "healing", "teleport", "blizzard", "firewall", "summon bat", "shield"]

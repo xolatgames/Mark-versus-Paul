@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://tiyyv2vlhdoe"
+path="res://.godot/imported/Sun Shine Loop.ogg-52901ff5a64157a0260e753c70a47742.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Sun Shine Loop.ogg"
+dest_files=["res://.godot/imported/Sun Shine Loop.ogg-52901ff5a64157a0260e753c70a47742.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

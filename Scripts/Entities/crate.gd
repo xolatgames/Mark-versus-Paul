@@ -11,9 +11,9 @@ func _process(delta):
 		GameStats.already_spelling = true
 		if global_position.distance_to(GameStats.mark_position) > taked_distance:
 			drop()
-		$Pickable.show()
+		$Pickable.emitting = true
 	else:
-		$Pickable.hide()
+		$Pickable.emitting = false
 
 
 func _on_input_event(viewport, event, shape_idx):

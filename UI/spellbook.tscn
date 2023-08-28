@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnqyu7dx0cva8"]
+[gd_scene load_steps=10 format=3 uid="uid://bnqyu7dx0cva8"]
 
 [ext_resource type="Texture2D" uid="uid://bg6vkhxfswo54" path="res://Sprites/Spells Icons/Telekinesis.svg" id="1_boxx7"]
 [ext_resource type="Texture2D" uid="uid://cbyat4afs4rce" path="res://Sprites/Spells Icons/Choosed.svg" id="1_sydun"]
 [ext_resource type="Texture2D" uid="uid://digijec84eriw" path="res://Sprites/Spells Icons/Fireball.svg" id="2_6lfal"]
-[ext_resource type="LabelSettings" uid="uid://dlnxs58lapeiv" path="res://Fonts/ui_font.tres" id="2_cson4"]
 [ext_resource type="Texture2D" uid="uid://bqgnr527q6ujn" path="res://Sprites/Spells Icons/Blizzard.svg" id="3_kafpj"]
 [ext_resource type="Texture2D" uid="uid://bd6ydje0lll7k" path="res://Sprites/Spells Icons/Healing.svg" id="4_d7xgq"]
 [ext_resource type="Texture2D" uid="uid://dohin4f6hrwwx" path="res://Sprites/Spells Icons/Teleport.svg" id="5_ssp5d"]
@@ -31,6 +30,7 @@ texture = ExtResource("1_sydun")
 expand_mode = 1
 
 [node name="Telekinesis" type="TextureRect" parent="."]
+visible = false
 offset_left = 32.0
 offset_top = 544.0
 offset_right = 96.0
@@ -43,11 +43,11 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 text = "1"
-label_settings = ExtResource("2_cson4")
 horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="Fireball" type="TextureRect" parent="."]
+visible = false
 offset_left = 96.0
 offset_top = 544.0
 offset_right = 160.0
@@ -60,11 +60,11 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 text = "2"
-label_settings = ExtResource("2_cson4")
 horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="Healing" type="TextureRect" parent="."]
+visible = false
 offset_left = 160.0
 offset_top = 544.0
 offset_right = 224.0
@@ -77,11 +77,11 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 text = "3"
-label_settings = ExtResource("2_cson4")
 horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="Teleport" type="TextureRect" parent="."]
+visible = false
 offset_left = 224.0
 offset_top = 544.0
 offset_right = 288.0
@@ -94,11 +94,11 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 text = "4"
-label_settings = ExtResource("2_cson4")
 horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="Blizzard" type="TextureRect" parent="."]
+visible = false
 offset_left = 288.0
 offset_top = 544.0
 offset_right = 352.0
@@ -111,11 +111,11 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 text = "5"
-label_settings = ExtResource("2_cson4")
 horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="Firewall" type="TextureRect" parent="."]
+visible = false
 offset_left = 352.0
 offset_top = 544.0
 offset_right = 416.0
@@ -128,11 +128,11 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 text = "6"
-label_settings = ExtResource("2_cson4")
 horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="Summon Bat" type="TextureRect" parent="."]
+visible = false
 offset_left = 416.0
 offset_top = 544.0
 offset_right = 480.0
@@ -145,11 +145,11 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 text = "7"
-label_settings = ExtResource("2_cson4")
 horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="Shield" type="TextureRect" parent="."]
+visible = false
 offset_left = 480.0
 offset_top = 544.0
 offset_right = 544.0
@@ -162,6 +162,5 @@ layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 text = "Shift"
-label_settings = ExtResource("2_cson4")
 horizontal_alignment = 2
 vertical_alignment = 2

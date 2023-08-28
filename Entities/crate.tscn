@@ -22,6 +22,6 @@ texture = ExtResource("2_xulbc")
 shape = SubResource("RectangleShape2D_vli15")
 
 [node name="Pickable" parent="." instance=ExtResource("3_rrabp")]
-visible = false
+emitting = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

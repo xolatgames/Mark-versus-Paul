@@ -1,4 +1,8 @@
-extends Spellbook
+extends Cheating
+
+
+func _ready():
+	$"Cheat Console/Enter the Code".connect("text_submitted", Callable(self, "cheatActivate"))
 
 
 func _process(delta):
@@ -9,3 +13,5 @@ func _process(delta):
 	$"Items Stat/Milk Counter".text = str(GameStats.milk_count)
 	
 	spelling()
+	
+	cheating()

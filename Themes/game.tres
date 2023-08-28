@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cgdkjpsig33g8"]
+
+[resource]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 0
+Label/font_sizes/font_size = 24
