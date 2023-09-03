@@ -12,12 +12,15 @@ func _process(delta):
 		if global_position.distance_to(GameStats.mark_position) > taked_distance:
 			drop()
 		$Pickable.emitting = true
+		if !$"Pick up sound".playing:
+			$"Pick up sound".play()
 	else:
 		$Pickable.emitting = false
+		$"Pick up sound".stop()
 
 
 func _on_input_event(viewport, event, shape_idx):
-	if !GameStats.already_spelling and GameStats.choosed_spell == 1 and !global_position.distance_to(GameStats.mark_position) > taked_distance:
+	if !GameStats.already_spelling and GameStats.choosed_spell == 1 and !global_position.distance_to(GameStats.mark_position) > taked_distance and GameStats.opened_spells.has("telekinesis"):
 			if event is InputEventMouseButton:
 				if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 					take()
@@ -42,3 +45,11 @@ func take():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GameStats.already_spelling = true
 	taked = true
+
+
+func _on_hit_area_body_entered(body):
+	if body is Enemy:
+		if linear_velocity.length() > 100:
+			body.pushing()
+			drop()
+			queue_free()

@@ -1,8 +1,11 @@
 extends Cheating
 
+class_name  GameUI
+
 
 func _ready():
 	$"Cheat Console/Enter the Code".connect("text_submitted", Callable(self, "cheatActivate"))
+	$"Spell discription/Panel/Close".connect("pressed", Callable(self, "closeDescription"))
 
 
 func _process(delta):

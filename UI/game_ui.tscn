@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://vvf028rd583w"]
+[gd_scene load_steps=15 format=3 uid="uid://vvf028rd583w"]
 
 [ext_resource type="Script" path="res://Scripts/Game UI/game_ui.gd" id="1_hbv0l"]
 [ext_resource type="Texture2D" uid="uid://7mdqc7j2uv28" path="res://Sprites/Game UI/Icons/Health.svg" id="2_wbaq1"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cocebr2lpc5qv" path="res://Sprites/Game UI/Icons/Milk Counter.svg" id="11_6fr25"]
 [ext_resource type="PackedScene" uid="uid://bnqyu7dx0cva8" path="res://UI/spellbook.tscn" id="12_6jo34"]
 [ext_resource type="PackedScene" uid="uid://0cvq7q4vq2fv" path="res://UI/cheat_console.tscn" id="13_q7dv4"]
+[ext_resource type="PackedScene" uid="uid://xsjfft4f7bop" path="res://UI/spell_discription.tscn" id="14_hthoe"]
 
 [node name="Game UI" type="CanvasLayer"]
 script = ExtResource("1_hbv0l")
@@ -158,3 +159,6 @@ vertical_alignment = 1
 [node name="Cheat Console" parent="." instance=ExtResource("13_q7dv4")]
 offset = Vector2(288, 0)
 transform = Transform2D(1, 0, 0, 1, 288, 0)
+
+[node name="Spell discription" parent="." instance=ExtResource("14_hthoe")]
+visible = false

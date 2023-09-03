@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends SpellDescription
 
 class_name Spellbook
 
@@ -45,9 +45,9 @@ func spelling():
 		$Spellbook/Firewall.show()
 		if Input.is_action_just_pressed("firewall"):
 			GameStats.choosed_spell = 6
-	if GameStats.opened_spells.has("summon bat"):
+	if GameStats.opened_spells.has("summon a bat"):
 		$"Spellbook/Summon Bat".show()
-		if Input.is_action_just_pressed("summon bat"):
+		if Input.is_action_just_pressed("summon a bat"):
 			GameStats.choosed_spell = 7
 	if GameStats.opened_spells.has("shield"):
 		$"Spellbook/Shield".show()

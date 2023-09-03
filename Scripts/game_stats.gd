@@ -1,7 +1,7 @@
 extends Node
 
 
-var health = 60.0
+var health = 120.0
 var max_health = 120.0
 var mana = 120.0
 var max_mana = 120.0
@@ -13,7 +13,28 @@ var choosed_spell = 1
 var opened_spells = []
 var mark_position = Vector2.ZERO
 var already_spelling = false
+var healing_delay = 10.0
+var healing_delay_left = 0.0
+var healing_strength = 1
+
+
+func _physics_process(delta):
+	healing_delay_left -= 1.0/60
+	
+	if healing_delay_left <= 0 and health < max_health:
+		health += healing_strength
 
 
 func spells():
-	opened_spells = ["telekinesis", "fireball", "healing", "teleport", "blizzard", "firewall", "summon bat", "shield"]
+	opened_spells = ["telekinesis", "fireball", "healing", "teleport", "blizzard", "firewall", "summon a bat", "shield"]
+
+
+func showSpellDescription(spell_name, texture, description):
+	for i in get_tree().current_scene.get_children():
+		if i is GameUI:
+			i.showSpellDescription(spell_name, texture, description)
+
+
+func takeDamage(damage):
+	healing_delay_left = healing_delay
+	health -= damage

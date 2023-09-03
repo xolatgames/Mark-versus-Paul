@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8h7olbog7o4x"]
+[gd_scene load_steps=17 format=3 uid="uid://c8h7olbog7o4x"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Mark/mark.gd" id="1_1nckv"]
 [ext_resource type="Texture2D" uid="uid://b0n1nmejsjmhx" path="res://Sprites/Mark/Body/Idle.svg" id="2_xqr8n"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cqu8x5coxyurr" path="res://Sprites/Mark/Hand/Idle.svg" id="5_8oid6"]
 [ext_resource type="Texture2D" uid="uid://cgghkaspae67d" path="res://Sprites/Mark/Hand/Spelling.svg" id="6_c8fu5"]
 [ext_resource type="PackedScene" uid="uid://bdd42jtxs1fir" path="res://Entities/Spells/healing.tscn" id="8_cw4xx"]
+[ext_resource type="AudioStream" uid="uid://5fjyvum364d5" path="res://Sounds/Footsteps_Walk_Grass_Mono_02.wav" id="9_1w4ld"]
+[ext_resource type="AudioStream" uid="uid://c8yvfo41npp1p" path="res://Sounds/Footsteps_Grass_Tall_Movement_09.wav" id="10_auapk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3pghw"]
 animations = [{
@@ -15,7 +17,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_xqr8n")
 }],
-"loop": true,
+"loop": false,
 "name": &"Idle",
 "speed": 5.0
 }, {
@@ -26,7 +28,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_hmmf8")
 }],
-"loop": true,
+"loop": false,
 "name": &"Walk",
 "speed": 5.0
 }]
@@ -91,6 +93,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Somersaults sound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_hhn7d"]
 resource_name = "Somersaults"
@@ -131,6 +145,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0, 12.5664]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Somersaults sound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u355u"]
 _data = {
@@ -148,7 +174,6 @@ scale = Vector2(0.063, 0.063)
 sprite_frames = SubResource("SpriteFrames_3pghw")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.638889
 
 [node name="Somersaults" type="Sprite2D" parent="."]
 visible = false
@@ -181,3 +206,13 @@ libraries = {
 
 [node name="Healing" parent="." instance=ExtResource("8_cw4xx")]
 emitting = false
+
+[node name="Walk sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_1w4ld")
+bus = &"Sound"
+
+[node name="Somersaults sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_auapk")
+bus = &"Sound"
+
+[connection signal="animation_finished" from="Body" to="." method="_on_body_animation_finished"]

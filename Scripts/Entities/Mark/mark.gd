@@ -1,5 +1,8 @@
 extends CastSpells
 
+class_name Mark
+
+
 var speed = 100
 var flip = "right"
 var somersaults = false
@@ -69,3 +72,8 @@ func doSomersaults():
 	somersaults = false
 	await get_tree().create_timer(2).timeout
 	somersaults_delay = false
+
+
+func _on_body_animation_finished():
+	if $Body.animation == "Walk":
+		$"Walk sound".play()

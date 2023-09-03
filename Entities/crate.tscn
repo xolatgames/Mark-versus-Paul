@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddu56rt1pnwib"]
+[gd_scene load_steps=7 format=3 uid="uid://ddu56rt1pnwib"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/crate.gd" id="1_00v4v"]
 [ext_resource type="Texture2D" uid="uid://dkxryynu3aw57" path="res://Sprites/Environment/Crate.svg" id="2_xulbc"]
 [ext_resource type="PackedScene" uid="uid://sd8bx6ittxt3" path="res://Entities/Spells/pickable.tscn" id="3_rrabp"]
+[ext_resource type="AudioStream" uid="uid://insfn0rbsua0" path="res://Sounds/Arcane_BuildupF1.wav" id="4_qcjgj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vli15"]
 size = Vector2(24, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78cse"]
+size = Vector2(32, 32)
 
 [node name="Crate" type="RigidBody2D"]
 input_pickable = true
@@ -24,4 +28,14 @@ shape = SubResource("RectangleShape2D_vli15")
 [node name="Pickable" parent="." instance=ExtResource("3_rrabp")]
 emitting = false
 
+[node name="Pick up sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qcjgj")
+bus = &"Sound"
+
+[node name="HitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea"]
+shape = SubResource("RectangleShape2D_78cse")
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]

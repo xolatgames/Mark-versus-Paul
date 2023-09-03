@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_a1nvv"]
 [ext_resource type="LabelSettings" uid="uid://balgng1bimial" path="res://Fonts/24p font.tres" id="2_4q2cq"]
-[ext_resource type="AudioStream" uid="uid://cfgiqweuwaame" path="res://Music/Friday Afternoon Loop.ogg" id="3_e866i"]
+[ext_resource type="AudioStream" uid="uid://dtjdjterkna57" path="res://Music/Friday Afternoon Loop.ogg" id="3_e866i"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -221,20 +221,81 @@ offset_bottom = 133.0
 text = "Music:"
 label_settings = ExtResource("2_4q2cq")
 
-[node name="#1" type="Label" parent="Developers/Music"]
+[node name="#1" type="Button" parent="Developers/Music"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 128.0
-offset_right = 864.0
-offset_bottom = 160.0
-text = "Music by timbeek.com"
-label_settings = ExtResource("2_4q2cq")
+offset_right = 480.0
+offset_bottom = 168.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 24
+text = "by timbeek.com"
+alignment = 0
 
-[node name="Fonts" type="Control" parent="Developers"]
+[node name="Sounds" type="Control" parent="Developers"]
 anchors_preset = 0
 offset_top = 192.0
 offset_right = 40.0
 offset_bottom = 232.0
+
+[node name="Label" type="Label" parent="Developers/Sounds"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 896.0
+offset_bottom = 133.0
+text = "Sounds:"
+label_settings = ExtResource("2_4q2cq")
+
+[node name="#1" type="Button" parent="Developers/Sounds"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 128.0
+offset_right = 480.0
+offset_bottom = 168.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 24
+text = "FilmCow"
+alignment = 0
+
+[node name="#2" type="Button" parent="Developers/Sounds"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 128.0
+offset_right = 864.0
+offset_bottom = 168.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 24
+text = "Nox_Sound"
+alignment = 0
+
+[node name="#3" type="Button" parent="Developers/Sounds"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 160.0
+offset_right = 480.0
+offset_bottom = 200.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 24
+text = "Tim"
+alignment = 0
+
+[node name="#4" type="Button" parent="Developers/Sounds"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 160.0
+offset_right = 864.0
+offset_bottom = 200.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 24
+text = "Leohpaz"
+alignment = 0
+
+[node name="Fonts" type="Control" parent="Developers"]
+anchors_preset = 0
+offset_top = 320.0
+offset_right = 40.0
+offset_bottom = 360.0
 
 [node name="Label" type="Label" parent="Developers/Fonts"]
 layout_mode = 0
@@ -245,14 +306,16 @@ offset_bottom = 133.0
 text = "Font:"
 label_settings = ExtResource("2_4q2cq")
 
-[node name="#1" type="Label" parent="Developers/Fonts"]
+[node name="#1" type="Button" parent="Developers/Fonts"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 128.0
-offset_right = 864.0
-offset_bottom = 160.0
+offset_right = 480.0
+offset_bottom = 168.0
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 24
 text = "Sora Sagano"
-label_settings = ExtResource("2_4q2cq")
+alignment = 0
 
 [node name="Label" type="Label" parent="Developers"]
 layout_mode = 0
@@ -287,4 +350,10 @@ bus = &"Music"
 [connection signal="pressed" from="Social/GitHub" to="." method="_on_git_hub_pressed"]
 [connection signal="pressed" from="Social/Blogger" to="." method="_on_blogger_pressed"]
 [connection signal="pressed" from="Options/Close" to="." method="_on_close_options_pressed"]
+[connection signal="pressed" from="Developers/Music/#1" to="." method="link" binds= ["https://timbeek.com/"]]
+[connection signal="pressed" from="Developers/Sounds/#1" to="." method="link" binds= ["https://filmcow.itch.io/"]]
+[connection signal="pressed" from="Developers/Sounds/#2" to="." method="link" binds= ["https://nox-sound.itch.io/"]]
+[connection signal="pressed" from="Developers/Sounds/#3" to="." method="link" binds= ["https://timothyadan.itch.io/"]]
+[connection signal="pressed" from="Developers/Sounds/#4" to="." method="link" binds= ["https://leohpaz.itch.io/"]]
+[connection signal="pressed" from="Developers/Fonts/#1" to="." method="link" binds= ["http://www.dotcolon.net/"]]
 [connection signal="pressed" from="Developers/Close" to="." method="_on_close_developers_pressed"]

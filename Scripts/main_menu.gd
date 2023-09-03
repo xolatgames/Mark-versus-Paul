@@ -36,3 +36,7 @@ func _on_close_options_pressed():
 
 func _on_close_developers_pressed():
 	$Developers.hide()
+
+
+func link(link):
+	OS.shell_open(link)

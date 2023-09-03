@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://crc8k5vrcl6c7"]
+
+[ext_resource type="Texture2D" uid="uid://b18ax81ke5skf" path="res://Sprites/Environment/Portal/Activate portal.svg" id="1_o5g8g"]
+[ext_resource type="Texture2D" uid="uid://bugclqbubi4xa" path="res://Sprites/Environment/Portal/Portal.svg" id="2_wktdl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_giko2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o5g8g")
+}],
+"loop": true,
+"name": &"Activate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wktdl")
+}],
+"loop": true,
+"name": &"Deactivate",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0ogf"]
+size = Vector2(24, 24)
+
+[node name="Portal" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = SubResource("SpriteFrames_giko2")
+animation = &"Activate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c0ogf")

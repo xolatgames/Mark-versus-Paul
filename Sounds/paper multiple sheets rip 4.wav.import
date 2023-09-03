@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ds64v6io6xktb"
+path="res://.godot/imported/paper multiple sheets rip 4.wav-f21dd1fb69c7ebc9a3d8cce3b84a6bd4.sample"
+
+[deps]
+
+source_file="res://Sounds/paper multiple sheets rip 4.wav"
+dest_files=["res://.godot/imported/paper multiple sheets rip 4.wav-f21dd1fb69c7ebc9a3d8cce3b84a6bd4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
