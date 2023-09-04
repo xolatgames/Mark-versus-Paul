@@ -22,14 +22,6 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 
-func _on_git_hub_pressed():
-	OS.shell_open("https://github.com/xolatgames/Mark-versus-Paul")
-
-
-func _on_blogger_pressed():
-	OS.shell_open("https://xolatgames.blogspot.com/")
-
-
 func _on_close_options_pressed():
 	$Options.hide()
 

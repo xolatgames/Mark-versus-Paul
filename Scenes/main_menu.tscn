@@ -90,8 +90,25 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Gamejolt" type="Button" parent="Social"]
+offset_left = 544.0
+offset_top = 352.0
+offset_right = 992.0
+offset_bottom = 416.0
+mouse_default_cursor_shape = 2
+text = "Gamejolt"
+alignment = 2
+
+[node name="Itch_io" type="Button" parent="Social"]
+offset_left = 544.0
+offset_top = 416.0
+offset_right = 992.0
+offset_bottom = 480.0
+mouse_default_cursor_shape = 2
+text = "Itch.io"
+alignment = 2
+
 [node name="GitHub" type="Button" parent="Social"]
-layout_mode = 0
 offset_left = 544.0
 offset_top = 480.0
 offset_right = 992.0
@@ -347,8 +364,10 @@ bus = &"Music"
 [connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/Developers" to="." method="_on_developers_pressed"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Social/GitHub" to="." method="_on_git_hub_pressed"]
-[connection signal="pressed" from="Social/Blogger" to="." method="_on_blogger_pressed"]
+[connection signal="pressed" from="Social/Gamejolt" to="." method="link" binds= ["https://gamejolt.com/games/marknpaul/833245"]]
+[connection signal="pressed" from="Social/Itch_io" to="." method="link" binds= ["https://xolatgames.itch.io/marknpaul"]]
+[connection signal="pressed" from="Social/GitHub" to="." method="link" binds= ["https://github.com/xolatgames/Mark-versus-Paul"]]
+[connection signal="pressed" from="Social/Blogger" to="." method="link" binds= ["https://xolatgames.blogspot.com/"]]
 [connection signal="pressed" from="Options/Close" to="." method="_on_close_options_pressed"]
 [connection signal="pressed" from="Developers/Music/#1" to="." method="link" binds= ["https://timbeek.com/"]]
 [connection signal="pressed" from="Developers/Sounds/#1" to="." method="link" binds= ["https://filmcow.itch.io/"]]
