@@ -12,11 +12,11 @@ You already have:
 
 > Move, do somersaults and cast any of the eight spells
 
-> Main menu and tutorial already done!
+> Main menu, game menu and tutorial already done!
 
 > Cheat's console core
 
-> One enemy
+> One of the enemies
 
 > Sound and music effects, and setup volume of them
 
