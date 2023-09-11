@@ -13,8 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dtjdjterkna57" path="res://Music/Friday Afternoon Loop.ogg" id="11_qdk2p"]
 
 [node name="Tutorial" type="Node2D"]
-metadata/_edit_vertical_guides_ = [1792.0, 2560.0, 512.0, 3584.0, 4352.0]
-metadata/_edit_horizontal_guides_ = [320.0, 1024.0]
+metadata/_edit_horizontal_guides_ = [1024.0]
 
 [node name="Game UI" parent="." instance=ExtResource("1_novgj")]
 
@@ -106,12 +105,14 @@ text = "You can restore the health if you wait 10 seconds without taking damage 
 autowrap_mode = 2
 
 [node name="Ambient" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("10_btsx5")
 volume_db = -20.0
 autoplay = true
 bus = &"Music"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("11_qdk2p")
 volume_db = -20.0
 autoplay = true

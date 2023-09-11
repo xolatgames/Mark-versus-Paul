@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnqyu7dx0cva8"]
+[gd_scene load_steps=11 format=3 uid="uid://bnqyu7dx0cva8"]
 
+[ext_resource type="Script" path="res://Scripts/Game UI/spellbook.gd" id="1_21vsl"]
 [ext_resource type="Texture2D" uid="uid://bg6vkhxfswo54" path="res://Sprites/Spells Icons/Telekinesis.svg" id="1_boxx7"]
 [ext_resource type="Texture2D" uid="uid://cbyat4afs4rce" path="res://Sprites/Spells Icons/Choosed.svg" id="1_sydun"]
 [ext_resource type="Texture2D" uid="uid://digijec84eriw" path="res://Sprites/Spells Icons/Fireball.svg" id="2_6lfal"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b2jbhlfd5jsbi" path="res://Sprites/Spells Icons/Summon Bat.svg" id="7_d7lmh"]
 
 [node name="Spellbook" type="CanvasLayer"]
+script = ExtResource("1_21vsl")
 
 [node name="Choosed" type="Control" parent="."]
 layout_mode = 3
@@ -131,7 +133,7 @@ text = "6"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Summon Bat" type="TextureRect" parent="."]
+[node name="Summon a Bat" type="TextureRect" parent="."]
 visible = false
 offset_left = 416.0
 offset_top = 544.0
@@ -140,7 +142,7 @@ offset_bottom = 608.0
 texture = ExtResource("7_d7lmh")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="Summon Bat"]
+[node name="Label" type="Label" parent="Summon a Bat"]
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0

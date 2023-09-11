@@ -1,5 +1,6 @@
 extends Enemy
 
+class_name Orc
 
 var moved = false
 var attacked = false

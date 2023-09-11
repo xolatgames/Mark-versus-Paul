@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+class_name Bat
 
 var speed = 100
 var direction = 0

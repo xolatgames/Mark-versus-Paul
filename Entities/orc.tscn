@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvved1plpdfdh"]
+[gd_scene load_steps=15 format=3 uid="uid://dvved1plpdfdh"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/orc.gd" id="1_gm7n3"]
 [ext_resource type="Texture2D" uid="uid://dhcffsiyu0lxt" path="res://Sprites/Orc/Idle.svg" id="2_fbd04"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://5fjyvum364d5" path="res://Sounds/Footsteps_Walk_Grass_Mono_02.wav" id="9_yxjs2"]
 [ext_resource type="AudioStream" uid="uid://bjx3p1uunalsr" path="res://Sounds/07_human_atk_sword_1.wav" id="10_aog8v"]
 [ext_resource type="AudioStream" uid="uid://dihnpc6njtg2p" path="res://Sounds/03_crate_open_1.wav" id="10_n44ty"]
+[ext_resource type="AudioStream" uid="uid://dgrs8gim875lh" path="res://Sounds/21_orc_damage_3.wav" id="12_jtd8q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uhht2"]
 animations = [{
@@ -88,6 +89,10 @@ bus = &"Sound"
 
 [node name="Pushing sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_n44ty")
+bus = &"Sound"
+
+[node name="Damaged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_jtd8q")
 bus = &"Sound"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

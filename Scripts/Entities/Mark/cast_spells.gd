@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 class_name CastSpells
 
-
 var shield_is_activated = false
 var spelling = false
 var spells_distance = 256
@@ -16,6 +15,8 @@ func castingSpells():
 		$Shield.hide()
 	
 	if GameStats.opened_spells.has("shield") and Input.is_action_pressed("shield") and !GameStats.already_spelling:
+		if !$"Shield sound".playing:
+			$"Shield sound".play()
 		shield_is_activated = true
 		takeABreath(0.1)
 	
@@ -27,6 +28,8 @@ func castingSpells():
 					takeABreath(0.2)
 				3:
 					if GameStats.mana > 3:
+						if !$"Healing sound".playing:
+							$"Healing sound".play()
 						$Healing.emitting = true
 						GameStats.health += 1
 						GameStats.mana -= 2
@@ -46,16 +49,16 @@ func castingSpells():
 							GameStats.mana -= 2
 							takeABreath(0.2)
 				6:
-					if GameStats.mana > 1:
+					if GameStats.mana > 4:
 						if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
 							spawnTheFirewall()
-							GameStats.mana -= 0.5
-							takeABreath(0.05)
+							GameStats.mana -= 3
+							takeABreath(0.3)
 				7:
-					if GameStats.mana > 26:
+					if GameStats.mana > 51:
 						summonTheBat()
-						GameStats.mana -= 25
-						takeABreath(5)
+						GameStats.mana -= 50
+						takeABreath(2)
 
 
 func takeABreath(delay):
@@ -67,9 +70,11 @@ func takeABreath(delay):
 
 func hideEffects():
 	if !Input.is_action_pressed("shield"):
+		$"Shield sound".stop()
 		shield_is_activated = false
 	
 	if !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) or !GameStats.choosed_spell == 3:
+		$"Healing sound".stop()
 		$Healing.emitting = false
 
 
@@ -81,7 +86,8 @@ func showTeleport():
 
 
 func manaRestore():
-	GameStats.mana += 1.0 / mana_restore_speed
+	if GameStats.mana < GameStats.max_mana:
+		GameStats.mana += 1.0 / mana_restore_speed
 
 
 func spawnTheFireball():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c8h7olbog7o4x"]
+[gd_scene load_steps=19 format=3 uid="uid://c8h7olbog7o4x"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Mark/mark.gd" id="1_1nckv"]
 [ext_resource type="Texture2D" uid="uid://b0n1nmejsjmhx" path="res://Sprites/Mark/Body/Idle.svg" id="2_xqr8n"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bdd42jtxs1fir" path="res://Entities/Spells/healing.tscn" id="8_cw4xx"]
 [ext_resource type="AudioStream" uid="uid://5fjyvum364d5" path="res://Sounds/Footsteps_Walk_Grass_Mono_02.wav" id="9_1w4ld"]
 [ext_resource type="AudioStream" uid="uid://c8yvfo41npp1p" path="res://Sounds/Footsteps_Grass_Tall_Movement_09.wav" id="10_auapk"]
+[ext_resource type="AudioStream" uid="uid://cnksmb5460hwf" path="res://Sounds/Arcane_BuildupF3.wav" id="11_esdnd"]
+[ext_resource type="AudioStream" uid="uid://bg62t2utvd50" path="res://Sounds/Scrape_Buildup1.wav" id="12_0xkbc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3pghw"]
 animations = [{
@@ -213,6 +215,14 @@ bus = &"Sound"
 
 [node name="Somersaults sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_auapk")
+bus = &"Sound"
+
+[node name="Healing sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_esdnd")
+bus = &"Sound"
+
+[node name="Shield sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_0xkbc")
 bus = &"Sound"
 
 [connection signal="animation_finished" from="Body" to="." method="_on_body_animation_finished"]

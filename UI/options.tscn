@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dj2nhlk6rq5ja"]
+
+[node name="Options" type="Panel"]
+visible = false
+anchors_preset = -1
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 992.0
+offset_bottom = 608.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 896.0
+offset_bottom = 96.0
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 448.0
+offset_bottom = 192.0
+text = "Sound:"
+vertical_alignment = 1
+
+[node name="Sound Set" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 128.0
+offset_right = 896.0
+offset_bottom = 192.0
+min_value = -80.0
+max_value = 6.0
+
+[node name="Music Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 224.0
+offset_right = 448.0
+offset_bottom = 288.0
+text = "Music:"
+vertical_alignment = 1
+
+[node name="Music Set" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 224.0
+offset_right = 896.0
+offset_bottom = 288.0
+min_value = -80.0
+max_value = 6.0
+
+[node name="Close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 480.0
+offset_right = 896.0
+offset_bottom = 544.0
+mouse_default_cursor_shape = 2
+text = "Close"
+alignment = 2

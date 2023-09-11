@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bev52fkl4fjf3"]
+[gd_scene load_steps=6 format=3 uid="uid://bev52fkl4fjf3"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_a1nvv"]
 [ext_resource type="LabelSettings" uid="uid://balgng1bimial" path="res://Fonts/24p font.tres" id="2_4q2cq"]
+[ext_resource type="Texture2D" uid="uid://btp6rhn2gxqr7" path="res://Textures/Icons/Languages menu.png" id="3_4bkuu"]
+[ext_resource type="PackedScene" uid="uid://dj2nhlk6rq5ja" path="res://UI/options.tscn" id="3_c44ys"]
 [ext_resource type="AudioStream" uid="uid://dtjdjterkna57" path="res://Music/Friday Afternoon Loop.ogg" id="3_e866i"]
 
 [node name="Main Menu" type="Control"]
@@ -24,13 +26,14 @@ text = "Mark versus Paul"
 [node name="Main Developer" type="Label" parent="."]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 64.0
+offset_top = 96.0
 offset_right = 992.0
-offset_bottom = 104.0
+offset_bottom = 136.0
 text = "Main Developer: xolatgames"
 label_settings = ExtResource("2_4q2cq")
 
 [node name="Menu" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -86,20 +89,23 @@ text = "Quit"
 alignment = 0
 
 [node name="Social" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Gamejolt" type="Button" parent="Social"]
+[node name="GameJolt" type="Button" parent="Social"]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 352.0
 offset_right = 992.0
 offset_bottom = 416.0
 mouse_default_cursor_shape = 2
-text = "Gamejolt"
+text = "GameJolt"
 alignment = 2
 
 [node name="Itch_io" type="Button" parent="Social"]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 416.0
 offset_right = 992.0
@@ -109,6 +115,7 @@ text = "Itch.io"
 alignment = 2
 
 [node name="GitHub" type="Button" parent="Social"]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 480.0
 offset_right = 992.0
@@ -127,70 +134,24 @@ mouse_default_cursor_shape = 2
 text = "Blogger"
 alignment = 2
 
-[node name="Options" type="Panel" parent="."]
-visible = false
+[node name="Languages" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 32.0
+offset_left = 928.0
 offset_top = 32.0
 offset_right = 992.0
-offset_bottom = 608.0
-
-[node name="Label" type="Label" parent="Options"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 928.0
 offset_bottom = 96.0
-text = "Options"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sound Label" type="Label" parent="Options"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 128.0
-offset_right = 448.0
-offset_bottom = 192.0
-text = "Sound:"
-vertical_alignment = 1
-
-[node name="Sound Set" type="HSlider" parent="Options"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 128.0
-offset_right = 896.0
-offset_bottom = 192.0
-min_value = -80.0
-max_value = 6.0
-
-[node name="Music Label" type="Label" parent="Options"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 224.0
-offset_right = 448.0
-offset_bottom = 288.0
-text = "Music:"
-vertical_alignment = 1
-
-[node name="Music Set" type="HSlider" parent="Options"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 224.0
-offset_right = 896.0
-offset_bottom = 288.0
-min_value = -80.0
-max_value = 6.0
-
-[node name="Close" type="Button" parent="Options"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 480.0
-offset_right = 928.0
-offset_bottom = 544.0
 mouse_default_cursor_shape = 2
-text = "Close
-"
-alignment = 2
+texture_normal = ExtResource("3_4bkuu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Options" parent="." instance=ExtResource("3_c44ys")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 960.0
+offset_bottom = 576.0
 
 [node name="Developers" type="Panel" parent="."]
 visible = false
@@ -199,6 +160,16 @@ offset_left = 32.0
 offset_top = 32.0
 offset_right = 992.0
 offset_bottom = 608.0
+
+[node name="Label" type="Label" parent="Developers"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 896.0
+offset_bottom = 96.0
+text = "Thanks for Developing:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Main Developers" type="Control" parent="Developers"]
 anchors_preset = 0
@@ -334,25 +305,60 @@ theme_override_font_sizes/font_size = 24
 text = "Sora Sagano"
 alignment = 0
 
-[node name="Label" type="Label" parent="Developers"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 928.0
-offset_bottom = 96.0
-text = "Thanks for Developing:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Close" type="Button" parent="Developers"]
 layout_mode = 0
 offset_left = 480.0
 offset_top = 480.0
-offset_right = 928.0
+offset_right = 896.0
 offset_bottom = 544.0
 mouse_default_cursor_shape = 2
-text = "Close
-"
+text = "Close"
+alignment = 2
+
+[node name="Languages panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 992.0
+offset_bottom = 608.0
+
+[node name="Label" type="Label" parent="Languages panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 896.0
+offset_bottom = 96.0
+text = "Choose the language:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="English" type="Button" parent="Languages panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 896.0
+offset_bottom = 160.0
+mouse_default_cursor_shape = 2
+text = "English"
+
+[node name="Russian" type="Button" parent="Languages panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 160.0
+offset_right = 896.0
+offset_bottom = 224.0
+mouse_default_cursor_shape = 2
+text = "Русский"
+
+[node name="Close" type="Button" parent="Languages panel"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 480.0
+offset_right = 896.0
+offset_bottom = 544.0
+mouse_default_cursor_shape = 2
+text = "Close"
 alignment = 2
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -364,11 +370,11 @@ bus = &"Music"
 [connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/Developers" to="." method="_on_developers_pressed"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Social/Gamejolt" to="." method="link" binds= ["https://gamejolt.com/games/marknpaul/833245"]]
+[connection signal="pressed" from="Social/GameJolt" to="." method="link" binds= ["https://gamejolt.com/games/marknpaul/833245"]]
 [connection signal="pressed" from="Social/Itch_io" to="." method="link" binds= ["https://xolatgames.itch.io/marknpaul"]]
 [connection signal="pressed" from="Social/GitHub" to="." method="link" binds= ["https://github.com/xolatgames/Mark-versus-Paul"]]
 [connection signal="pressed" from="Social/Blogger" to="." method="link" binds= ["https://xolatgames.blogspot.com/"]]
-[connection signal="pressed" from="Options/Close" to="." method="_on_close_options_pressed"]
+[connection signal="pressed" from="Languages" to="." method="_on_languages_pressed"]
 [connection signal="pressed" from="Developers/Music/#1" to="." method="link" binds= ["https://timbeek.com/"]]
 [connection signal="pressed" from="Developers/Sounds/#1" to="." method="link" binds= ["https://filmcow.itch.io/"]]
 [connection signal="pressed" from="Developers/Sounds/#2" to="." method="link" binds= ["https://nox-sound.itch.io/"]]
@@ -376,3 +382,6 @@ bus = &"Music"
 [connection signal="pressed" from="Developers/Sounds/#4" to="." method="link" binds= ["https://leohpaz.itch.io/"]]
 [connection signal="pressed" from="Developers/Fonts/#1" to="." method="link" binds= ["http://www.dotcolon.net/"]]
 [connection signal="pressed" from="Developers/Close" to="." method="_on_close_developers_pressed"]
+[connection signal="pressed" from="Languages panel/English" to="." method="changeLanguage" binds= ["en"]]
+[connection signal="pressed" from="Languages panel/Russian" to="." method="changeLanguage" binds= ["ru"]]
+[connection signal="pressed" from="Languages panel/Close" to="." method="_on_close_pressed"]

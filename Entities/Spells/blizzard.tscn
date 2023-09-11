@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b52tcd27gby45"]
+[gd_scene load_steps=8 format=3 uid="uid://b52tcd27gby45"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Spells/blizzard.gd" id="1_4npd2"]
 [ext_resource type="Texture2D" uid="uid://u31soffrri2u" path="res://Sprites/Spells Entities/Blizzard.svg" id="1_hajv8"]
+[ext_resource type="AudioStream" uid="uid://clsrj7jkief2j" path="res://Sounds/13_Ice_explosion_01.wav" id="3_08ohv"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ityby"]
 emission_shape = 3
@@ -14,7 +15,7 @@ scale_min = 0.02
 scale_max = 0.02
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ohx1"]
-radius = 24.0
+radius = 64.0
 
 [sub_resource type="Animation" id="Animation_4vn7v"]
 resource_name = "Finish"
@@ -49,8 +50,15 @@ texture = ExtResource("1_hajv8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7ohx1")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_08ohv")
+autoplay = true
+bus = &"Sound"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Finish"
 libraries = {
 "": SubResource("AnimationLibrary_bbrs4")
 }
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

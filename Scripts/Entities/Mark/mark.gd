@@ -2,7 +2,6 @@ extends CastSpells
 
 class_name Mark
 
-
 var speed = 100
 var flip = "right"
 var somersaults = false

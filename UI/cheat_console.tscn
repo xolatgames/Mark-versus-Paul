@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://0cvq7q4vq2fv"]
+[gd_scene load_steps=2 format=3 uid="uid://0cvq7q4vq2fv"]
+
+[ext_resource type="Script" path="res://Scripts/Game UI/cheating.gd" id="1_1n86k"]
 
 [node name="Cheat Console" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_1n86k")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 32.0
@@ -14,3 +18,7 @@ offset_left = 224.0
 offset_top = 24.0
 offset_right = 512.0
 offset_bottom = 69.0
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="text_submitted" from="Enter the Code" to="." method="_on_enter_the_code_text_submitted"]

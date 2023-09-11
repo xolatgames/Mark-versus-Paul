@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://e2unmgwgak1j"]
+[gd_scene load_steps=10 format=3 uid="uid://e2unmgwgak1j"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Spells/firewall.gd" id="1_o0a0n"]
 [ext_resource type="Texture2D" uid="uid://mdcp3n7jnmyv" path="res://Sprites/Spells Entities/Fire.svg" id="2_eo1kb"]
 [ext_resource type="Texture2D" uid="uid://cp6radixniqpr" path="res://Sprites/Spells Entities/Fire frame 2.svg" id="3_f4bg5"]
 [ext_resource type="Texture2D" uid="uid://dtalviqie72k3" path="res://Textures/Light.svg" id="4_ss5re"]
+[ext_resource type="AudioStream" uid="uid://b1pg30jqaeva0" path="res://Sounds/Ambiance_Fire_Big_Loop_Mono.wav" id="5_7qlik"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lbvf8"]
 animations = [{
@@ -23,6 +24,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_oa3u5"]
 resource_name = "Fade"
+length = 5.0
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,7 +32,7 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -66,3 +68,10 @@ autoplay = "Fade"
 libraries = {
 "": SubResource("AnimationLibrary_nqd65")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7qlik")
+autoplay = true
+bus = &"Sound"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

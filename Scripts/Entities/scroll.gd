@@ -1,5 +1,6 @@
 extends Area2D
 
+class_name Scroll
 
 @export var spell_texture : Texture
 @export var spell_name = ""

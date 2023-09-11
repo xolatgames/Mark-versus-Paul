@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://b47bchwe64fii"]
+
+[ext_resource type="Script" path="res://Scripts/Game UI/game_menu.gd" id="1_7gi4s"]
+[ext_resource type="PackedScene" uid="uid://dj2nhlk6rq5ja" path="res://UI/options.tscn" id="2_1j4kp"]
+
+[node name="Game menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_7gi4s")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 160.0
+offset_top = 96.0
+offset_right = 864.0
+offset_bottom = 544.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 96.0
+offset_right = 640.0
+offset_bottom = 160.0
+text = "Game menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 160.0
+offset_right = 640.0
+offset_bottom = 224.0
+mouse_default_cursor_shape = 2
+text = "Continue"
+
+[node name="Options" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 224.0
+offset_right = 640.0
+offset_bottom = 288.0
+mouse_default_cursor_shape = 2
+text = "Options"
+
+[node name="Main menu" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 288.0
+offset_right = 640.0
+offset_bottom = 352.0
+mouse_default_cursor_shape = 2
+text = "Main menu"
+
+[node name="Options" parent="." instance=ExtResource("2_1j4kp")]
+anchors_preset = 0
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/Main menu" to="." method="_on_main_menu_pressed"]

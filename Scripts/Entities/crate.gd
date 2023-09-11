@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+class_name Crate
 
 var taked = false
 var speed = 20

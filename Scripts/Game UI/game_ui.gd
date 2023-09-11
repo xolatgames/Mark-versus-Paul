@@ -1,10 +1,9 @@
-extends Cheating
+extends SpellDescription
 
 class_name  GameUI
 
 
 func _ready():
-	$"Cheat Console/Enter the Code".connect("text_submitted", Callable(self, "cheatActivate"))
 	$"Spell discription/Panel/Close".connect("pressed", Callable(self, "closeDescription"))
 
 
@@ -15,6 +14,10 @@ func _process(delta):
 	$"Experience Stat/Level".text = str(GameStats.level)
 	$"Items Stat/Milk Counter".text = str(GameStats.milk_count)
 	
-	spelling()
+	if Input.is_action_just_pressed("ui_cancel"):
+		await  get_tree().process_frame
+		$"Game menu".show()
 	
-	cheating()
+	if Input.is_action_just_pressed("cheat console"):
+		await  get_tree().process_frame
+		$"Cheat Console".show()
