@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkg0abuw385sw"]
+
+[ext_resource type="Texture2D" uid="uid://cus2suds04owj" path="res://Sprites/Peter/Peter.svg" id="1_l10ft"]
+[ext_resource type="Texture2D" uid="uid://ix0tqmo6gy3a" path="res://Sprites/Peter/Peter frame 2.svg" id="2_ffyow"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0lwo5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l10ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_l10ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_l10ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ffyow")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hmipi"]
+size = Vector2(24, 24)
+
+[node name="Peter" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(-0.063, 0.063)
+sprite_frames = SubResource("SpriteFrames_0lwo5")
+autoplay = "default"
+frame_progress = 0.78943
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hmipi")

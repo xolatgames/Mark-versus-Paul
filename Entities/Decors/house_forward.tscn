@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bofqcrjme3p8m"]
+
+[ext_resource type="Texture2D" uid="uid://drklhym7rnv3x" path="res://Sprites/Decor/House forward.svg" id="1_5g57u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqder"]
+size = Vector2(64, 64)
+
+[node name="House forward" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_5g57u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lqder")

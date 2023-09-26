@@ -28,18 +28,13 @@ func castingSpells():
 					takeABreath(0.2)
 				3:
 					if GameStats.mana > 3:
-						if !$"Healing sound".playing:
-							$"Healing sound".play()
-						$Healing.emitting = true
-						GameStats.health += 1
+						healing(1)
 						GameStats.mana -= 2
 						takeABreath(0.1)
 				4:
 					if GameStats.mana > 21:
 						if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
-							showTeleport()
-							global_position = get_viewport().get_camera_2d().get_global_mouse_position()
-							showTeleport()
+							teleporting()
 							GameStats.mana -= 20
 							takeABreath(1)
 				5:
@@ -117,3 +112,16 @@ func summonTheBat():
 	bat = bat.instantiate()
 	bat.global_position = global_position
 	get_tree().current_scene.add_child(bat)
+
+
+func healing(healpoints):
+	if !$"Healing sound".playing:
+		$"Healing sound".play()
+	$Healing.emitting = true
+	GameStats.health += healpoints
+
+
+func teleporting():
+	showTeleport()
+	global_position = get_viewport().get_camera_2d().get_global_mouse_position()
+	showTeleport()

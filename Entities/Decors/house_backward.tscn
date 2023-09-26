@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccridski2044v"]
+
+[ext_resource type="Texture2D" uid="uid://dhikox30ou5jx" path="res://Sprites/Decor/House backward.svg" id="1_lprye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqder"]
+size = Vector2(64, 64)
+
+[node name="House backward" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_lprye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lqder")

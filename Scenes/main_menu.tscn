@@ -171,135 +171,124 @@ text = "Thanks for Developing:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Main Developers" type="Control" parent="Developers"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="Developers/Main Developers"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Developers"]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 96.0
 offset_right = 896.0
-offset_bottom = 133.0
+offset_bottom = 480.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Developers/ScrollContainer"]
+layout_mode = 2
+
+[node name="Main Developers" type="Control" parent="Developers/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(832, 96)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Developers/ScrollContainer/VBoxContainer/Main Developers"]
+layout_mode = 2
+offset_right = 149.0
+offset_bottom = 28.0
 text = "Main Developer:"
 label_settings = ExtResource("2_4q2cq")
 
-[node name="#1" type="Label" parent="Developers/Main Developers"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 128.0
-offset_right = 864.0
-offset_bottom = 160.0
+[node name="#1" type="Label" parent="Developers/ScrollContainer/VBoxContainer/Main Developers"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 149.0
+offset_bottom = 60.0
 text = "xolatgames"
 label_settings = ExtResource("2_4q2cq")
 
-[node name="Music" type="Control" parent="Developers"]
-anchors_preset = 0
-offset_top = 96.0
-offset_right = 40.0
-offset_bottom = 136.0
+[node name="Music" type="Control" parent="Developers/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(832, 96)
+layout_mode = 2
 
-[node name="Label" type="Label" parent="Developers/Music"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 96.0
-offset_right = 896.0
-offset_bottom = 133.0
+[node name="Label" type="Label" parent="Developers/ScrollContainer/VBoxContainer/Music"]
+layout_mode = 2
+offset_right = 145.0
+offset_bottom = 28.0
 text = "Music:"
 label_settings = ExtResource("2_4q2cq")
 
-[node name="#1" type="Button" parent="Developers/Music"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 128.0
-offset_right = 480.0
-offset_bottom = 168.0
+[node name="#1" type="Button" parent="Developers/ScrollContainer/VBoxContainer/Music"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 145.0
+offset_bottom = 57.0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 24
 text = "by timbeek.com"
 alignment = 0
 
-[node name="Sounds" type="Control" parent="Developers"]
-anchors_preset = 0
-offset_top = 192.0
-offset_right = 40.0
-offset_bottom = 232.0
+[node name="Sounds" type="Control" parent="Developers/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(832, 176)
+layout_mode = 2
 
-[node name="Label" type="Label" parent="Developers/Sounds"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 96.0
-offset_right = 896.0
-offset_bottom = 133.0
+[node name="Label" type="Label" parent="Developers/ScrollContainer/VBoxContainer/Sounds"]
+layout_mode = 2
+offset_right = 109.0
+offset_bottom = 28.0
 text = "Sounds:"
 label_settings = ExtResource("2_4q2cq")
 
-[node name="#1" type="Button" parent="Developers/Sounds"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 128.0
-offset_right = 480.0
-offset_bottom = 168.0
+[node name="#1" type="Button" parent="Developers/ScrollContainer/VBoxContainer/Sounds"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 109.0
+offset_bottom = 57.0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 24
 text = "FilmCow"
 alignment = 0
 
-[node name="#2" type="Button" parent="Developers/Sounds"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 128.0
-offset_right = 864.0
-offset_bottom = 168.0
+[node name="#2" type="Button" parent="Developers/ScrollContainer/VBoxContainer/Sounds"]
+layout_mode = 2
+offset_top = 61.0
+offset_right = 109.0
+offset_bottom = 86.0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 24
 text = "Nox_Sound"
 alignment = 0
 
-[node name="#3" type="Button" parent="Developers/Sounds"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 160.0
-offset_right = 480.0
-offset_bottom = 200.0
+[node name="#3" type="Button" parent="Developers/ScrollContainer/VBoxContainer/Sounds"]
+layout_mode = 2
+offset_top = 90.0
+offset_right = 109.0
+offset_bottom = 115.0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 24
 text = "Tim"
 alignment = 0
 
-[node name="#4" type="Button" parent="Developers/Sounds"]
-layout_mode = 0
-offset_left = 480.0
-offset_top = 160.0
-offset_right = 864.0
-offset_bottom = 200.0
+[node name="#4" type="Button" parent="Developers/ScrollContainer/VBoxContainer/Sounds"]
+layout_mode = 2
+offset_top = 119.0
+offset_right = 109.0
+offset_bottom = 144.0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 24
 text = "Leohpaz"
 alignment = 0
 
-[node name="Fonts" type="Control" parent="Developers"]
-anchors_preset = 0
-offset_top = 320.0
-offset_right = 40.0
-offset_bottom = 360.0
+[node name="Fonts" type="Control" parent="Developers/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(832, 96)
+layout_mode = 2
 
-[node name="Label" type="Label" parent="Developers/Fonts"]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 96.0
-offset_right = 896.0
-offset_bottom = 133.0
+[node name="Label" type="Label" parent="Developers/ScrollContainer/VBoxContainer/Fonts"]
+layout_mode = 2
+offset_right = 111.0
+offset_bottom = 28.0
 text = "Font:"
 label_settings = ExtResource("2_4q2cq")
 
-[node name="#1" type="Button" parent="Developers/Fonts"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 128.0
-offset_right = 480.0
-offset_bottom = 168.0
+[node name="#1" type="Button" parent="Developers/ScrollContainer/VBoxContainer/Fonts"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 111.0
+offset_bottom = 57.0
 mouse_default_cursor_shape = 2
 theme_override_font_sizes/font_size = 24
 text = "Sora Sagano"
@@ -375,12 +364,12 @@ bus = &"Music"
 [connection signal="pressed" from="Social/GitHub" to="." method="link" binds= ["https://github.com/xolatgames/Mark-versus-Paul"]]
 [connection signal="pressed" from="Social/Blogger" to="." method="link" binds= ["https://xolatgames.blogspot.com/"]]
 [connection signal="pressed" from="Languages" to="." method="_on_languages_pressed"]
-[connection signal="pressed" from="Developers/Music/#1" to="." method="link" binds= ["https://timbeek.com/"]]
-[connection signal="pressed" from="Developers/Sounds/#1" to="." method="link" binds= ["https://filmcow.itch.io/"]]
-[connection signal="pressed" from="Developers/Sounds/#2" to="." method="link" binds= ["https://nox-sound.itch.io/"]]
-[connection signal="pressed" from="Developers/Sounds/#3" to="." method="link" binds= ["https://timothyadan.itch.io/"]]
-[connection signal="pressed" from="Developers/Sounds/#4" to="." method="link" binds= ["https://leohpaz.itch.io/"]]
-[connection signal="pressed" from="Developers/Fonts/#1" to="." method="link" binds= ["http://www.dotcolon.net/"]]
+[connection signal="pressed" from="Developers/ScrollContainer/VBoxContainer/Music/#1" to="." method="link" binds= ["https://timbeek.com/"]]
+[connection signal="pressed" from="Developers/ScrollContainer/VBoxContainer/Sounds/#1" to="." method="link" binds= ["https://filmcow.itch.io/"]]
+[connection signal="pressed" from="Developers/ScrollContainer/VBoxContainer/Sounds/#2" to="." method="link" binds= ["https://nox-sound.itch.io/"]]
+[connection signal="pressed" from="Developers/ScrollContainer/VBoxContainer/Sounds/#3" to="." method="link" binds= ["https://timothyadan.itch.io/"]]
+[connection signal="pressed" from="Developers/ScrollContainer/VBoxContainer/Sounds/#4" to="." method="link" binds= ["https://leohpaz.itch.io/"]]
+[connection signal="pressed" from="Developers/ScrollContainer/VBoxContainer/Fonts/#1" to="." method="link" binds= ["http://www.dotcolon.net/"]]
 [connection signal="pressed" from="Developers/Close" to="." method="_on_close_developers_pressed"]
 [connection signal="pressed" from="Languages panel/English" to="." method="changeLanguage" binds= ["en"]]
 [connection signal="pressed" from="Languages panel/Russian" to="." method="changeLanguage" binds= ["ru"]]

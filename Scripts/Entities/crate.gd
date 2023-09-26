@@ -12,12 +12,7 @@ func _process(delta):
 		GameStats.already_spelling = true
 		if global_position.distance_to(GameStats.mark_position) > taked_distance:
 			drop()
-		$Pickable.emitting = true
-		if !$"Pick up sound".playing:
-			$"Pick up sound".play()
-	else:
-		$Pickable.emitting = false
-		$"Pick up sound".stop()
+		taking()
 
 
 func _on_input_event(viewport, event, shape_idx):
@@ -40,6 +35,8 @@ func drop():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	GameStats.already_spelling = false
 	taked = false
+	$Pickable.emitting = false
+	$"Pick up sound".stop()
 
 
 func take():
@@ -54,3 +51,9 @@ func _on_hit_area_body_entered(body):
 			body.pushing()
 			drop()
 			queue_free()
+
+
+func taking():
+	$Pickable.emitting = true
+	if !$"Pick up sound".playing:
+		$"Pick up sound".play()
