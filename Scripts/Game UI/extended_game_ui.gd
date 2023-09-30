@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-class_name SpellDescription
+class_name ExtendedGameUI
 
 
 func showSpellDescription(spell_name, texture, description):
@@ -13,3 +13,10 @@ func showSpellDescription(spell_name, texture, description):
 
 func closeDescription():
 	$"Spell discription".hide()
+
+
+func showDialog(char_name, texture, telling):
+	$Dialog.show()
+	$Dialog/Name.text = char_name
+	$Dialog/Icon.texture = texture
+	$Dialog/Telling.text = telling

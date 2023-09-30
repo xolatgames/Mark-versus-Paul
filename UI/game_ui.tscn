@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://vvf028rd583w"]
+[gd_scene load_steps=17 format=3 uid="uid://vvf028rd583w"]
 
 [ext_resource type="Script" path="res://Scripts/Game UI/game_ui.gd" id="1_hbv0l"]
 [ext_resource type="Texture2D" uid="uid://7mdqc7j2uv28" path="res://Sprites/Game UI/Icons/Health.svg" id="2_wbaq1"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://0cvq7q4vq2fv" path="res://UI/cheat_console.tscn" id="13_q7dv4"]
 [ext_resource type="PackedScene" uid="uid://xsjfft4f7bop" path="res://UI/spell_discription.tscn" id="14_hthoe"]
 [ext_resource type="PackedScene" uid="uid://b47bchwe64fii" path="res://UI/game_menu.tscn" id="15_x4xtr"]
+[ext_resource type="PackedScene" uid="uid://cyap0upp4nfpi" path="res://UI/dialog.tscn" id="16_3djfk"]
 
 [node name="Game UI" type="CanvasLayer"]
 script = ExtResource("1_hbv0l")
@@ -166,4 +167,7 @@ transform = Transform2D(1, 0, 0, 1, 288, 0)
 visible = false
 
 [node name="Game menu" parent="." instance=ExtResource("15_x4xtr")]
+visible = false
+
+[node name="Dialog" parent="." instance=ExtResource("16_3djfk")]
 visible = false

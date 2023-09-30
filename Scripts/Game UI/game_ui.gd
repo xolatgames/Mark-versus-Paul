@@ -1,4 +1,4 @@
-extends SpellDescription
+extends ExtendedGameUI
 
 class_name  GameUI
 

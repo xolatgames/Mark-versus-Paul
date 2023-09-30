@@ -6,4 +6,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body is Mark:
-		get_tree().change_scene_to_file("res://Scenes/"+scene+".tscn")
+		if !scene == "":
+			get_tree().change_scene_to_file("res://Scenes/"+scene+".tscn")
+		else:
+			get_tree().quit()

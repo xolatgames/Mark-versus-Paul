@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c8h7olbog7o4x"]
+[gd_scene load_steps=22 format=3 uid="uid://c8h7olbog7o4x"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Mark/mark.gd" id="1_1nckv"]
 [ext_resource type="Texture2D" uid="uid://b0n1nmejsjmhx" path="res://Sprites/Mark/Body/Idle.svg" id="2_xqr8n"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dyc0hxykwr8ur" path="res://Sprites/Mark/Shield.svg" id="5_4p4qg"]
 [ext_resource type="Texture2D" uid="uid://cqu8x5coxyurr" path="res://Sprites/Mark/Hand/Idle.svg" id="5_8oid6"]
 [ext_resource type="Texture2D" uid="uid://cgghkaspae67d" path="res://Sprites/Mark/Hand/Spelling.svg" id="6_c8fu5"]
+[ext_resource type="Texture2D" uid="uid://dv0h7pk3w7vva" path="res://Sprites/Mark/Confuse/Confuse.svg" id="8_7leni"]
 [ext_resource type="PackedScene" uid="uid://bdd42jtxs1fir" path="res://Entities/Spells/healing.tscn" id="8_cw4xx"]
 [ext_resource type="AudioStream" uid="uid://5fjyvum364d5" path="res://Sounds/Footsteps_Walk_Grass_Mono_02.wav" id="9_1w4ld"]
+[ext_resource type="Texture2D" uid="uid://c6baqdk8a80jq" path="res://Sprites/Mark/Confuse/Confuse frame 2.svg" id="9_p1k2g"]
 [ext_resource type="AudioStream" uid="uid://c8yvfo41npp1p" path="res://Sounds/Footsteps_Grass_Tall_Movement_09.wav" id="10_auapk"]
 [ext_resource type="AudioStream" uid="uid://cnksmb5460hwf" path="res://Sounds/Arcane_BuildupF3.wav" id="11_esdnd"]
 [ext_resource type="AudioStream" uid="uid://bg62t2utvd50" path="res://Sounds/Scrape_Buildup1.wav" id="12_0xkbc"]
@@ -52,6 +54,20 @@ animations = [{
 "loop": true,
 "name": &"Spelling",
 "speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovy84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7leni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p1k2g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vq01"]
@@ -196,6 +212,14 @@ scale = Vector2(0.063, 0.063)
 texture = ExtResource("5_4p4qg")
 offset = Vector2(0, -256)
 
+[node name="Confuse" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -15.5)
+scale = Vector2(0.0625, 0.0634766)
+sprite_frames = SubResource("SpriteFrames_ovy84")
+autoplay = "default"
+frame_progress = 0.838146
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6vq01")
 
@@ -224,5 +248,8 @@ bus = &"Sound"
 [node name="Shield sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_0xkbc")
 bus = &"Sound"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="animation_finished" from="Body" to="." method="_on_body_animation_finished"]

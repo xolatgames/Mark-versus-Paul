@@ -35,6 +35,12 @@ func showSpellDescription(spell_name, texture, description):
 			i.showSpellDescription(spell_name, texture, description)
 
 
+func showDialog(char_name, texture, telling):
+	for i in get_tree().current_scene.get_children():
+		if i is GameUI:
+			i.showDialog(char_name, texture, telling)
+
+
 func takeDamage(damage):
 	healing_delay_left = healing_delay
 	health -= damage
