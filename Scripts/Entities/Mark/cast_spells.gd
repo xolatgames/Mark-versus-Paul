@@ -6,6 +6,7 @@ var shield_is_activated = false
 var spelling = false
 var spells_distance = 256
 var mana_restore_speed = 20
+var dead = false
 
 
 func castingSpells():
@@ -14,46 +15,50 @@ func castingSpells():
 	else:
 		$Shield.hide()
 	
-	if GameStats.opened_spells.has("shield") and Input.is_action_pressed("shield") and !GameStats.already_spelling:
-		if !$"Shield sound".playing:
-			$"Shield sound".play()
-		shield_is_activated = true
-		takeABreath(0.1)
 	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if !GameStats.already_spelling:
-			match GameStats.choosed_spell:
-				2:
-					spawnTheFireball()
-					takeABreath(0.2)
-				3:
-					if GameStats.mana > 3:
-						healing(1)
-						GameStats.mana -= 2
-						takeABreath(0.1)
-				4:
-					if GameStats.mana > 21:
-						if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
-							teleporting()
-							GameStats.mana -= 20
-							takeABreath(1)
-				5:
-					if GameStats.mana > 3:
-						if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
-							spawnTheBlizzard()
+	if !dead:
+		if GameStats.opened_spells.has("shield") and Input.is_action_pressed("shield") and !GameStats.already_spelling:
+			if !$"Shield sound".playing:
+				$"Shield sound".play()
+			GameStats.takeDamage(0)
+			shield_is_activated = true
+			takeABreath(0.1)
+	
+	if !dead:
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			if !GameStats.already_spelling:
+				match GameStats.choosed_spell:
+					2:
+						spawnTheFireball()
+						takeABreath(0.2)
+					3:
+						if GameStats.mana > 3:
+							healing(1)
 							GameStats.mana -= 2
-							takeABreath(0.2)
-				6:
-					if GameStats.mana > 4:
-						if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
-							spawnTheFirewall()
-							GameStats.mana -= 3
-							takeABreath(0.3)
-				7:
-					if GameStats.mana > 51:
-						summonTheBat()
-						GameStats.mana -= 50
-						takeABreath(2)
+							takeABreath(0.1)
+					4:
+						if GameStats.mana > 21:
+							if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
+								teleporting()
+								GameStats.mana -= 20
+								takeABreath(1)
+					5:
+						if GameStats.mana > 3:
+							if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
+								spawnTheBlizzard()
+								GameStats.mana -= 2
+								takeABreath(0.2)
+					6:
+						if GameStats.mana > 4:
+							if !global_position.distance_to(get_viewport().get_camera_2d().get_global_mouse_position()) > spells_distance:
+								spawnTheFirewall()
+								GameStats.mana -= 3
+								takeABreath(0.3)
+					7:
+						if GameStats.mana > 51:
+							summonTheBat()
+							GameStats.mana -= 50
+							takeABreath(2)
 
 
 func takeABreath(delay):
