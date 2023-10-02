@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Flipping
 
 class_name Bat
 
@@ -12,6 +12,8 @@ func _ready():
 
 func _physics_process(delta):
 	velocity = Vector2.from_angle(direction) * speed
+	
+	flipping()
 	
 	move_and_slide()
 

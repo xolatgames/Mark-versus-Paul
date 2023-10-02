@@ -28,6 +28,8 @@ func _physics_process(delta):
 				$AnimatedSprite2D.play("Attack")
 				GameStats.takeDamage(damage)
 				attacked = true
+		
+		flipping()
 	
 		if health <= 0:
 			$AnimatedSprite2D.play("Neutralize")

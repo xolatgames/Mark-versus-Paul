@@ -1,10 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://bev52fkl4fjf3"]
+[gd_scene load_steps=15 format=3 uid="uid://bev52fkl4fjf3"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_a1nvv"]
 [ext_resource type="LabelSettings" uid="uid://balgng1bimial" path="res://Fonts/24p font.tres" id="2_4q2cq"]
+[ext_resource type="TileSet" uid="uid://dyuaj2bnlk2f4" path="res://TileMaps/backgrounds.tres" id="2_14prm"]
+[ext_resource type="Texture2D" uid="uid://b0n1nmejsjmhx" path="res://Sprites/Mark/Body/Idle.svg" id="3_0nsbn"]
 [ext_resource type="Texture2D" uid="uid://btp6rhn2gxqr7" path="res://Textures/Icons/Languages menu.png" id="3_4bkuu"]
 [ext_resource type="PackedScene" uid="uid://dj2nhlk6rq5ja" path="res://UI/options.tscn" id="3_c44ys"]
 [ext_resource type="AudioStream" uid="uid://dtjdjterkna57" path="res://Music/Friday Afternoon Loop.ogg" id="3_e866i"]
+[ext_resource type="SpriteFrames" uid="uid://lxjl8lvhom4k" path="res://SpriteFrames/paul.tres" id="3_rmo1f"]
+[ext_resource type="Texture2D" uid="uid://cgghkaspae67d" path="res://Sprites/Mark/Hand/Spelling.svg" id="4_lqlv8"]
+[ext_resource type="Texture2D" uid="uid://17ddmf7463kx" path="res://Sprites/Spells Entities/Telekinesis.svg" id="5_fvndu"]
+[ext_resource type="AudioStream" uid="uid://insfn0rbsua0" path="res://Sounds/Arcane_BuildupF1.wav" id="6_85c0r"]
+
+[sub_resource type="Gradient" id="Gradient_m1hhk"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t3wkl"]
+gradient = SubResource("Gradient_m1hhk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_px2jh"]
+emission_shape = 1
+emission_sphere_radius = 32.0
+particle_flag_disable_z = true
+gravity = Vector3(0, -98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.01
+scale_max = 0.02
+color_ramp = SubResource("GradientTexture1D_t3wkl")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -14,6 +37,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a1nvv")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(0.5, 0.5)
+tile_set = ExtResource("2_14prm")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 1, 0, 65537, 1, 0, 65536, 1, 0, 2, 1, 0, 3, 1, 0, 65539, 1, 0, 65538, 1, 0, 131074, 1, 0, 131075, 1, 0, 131073, 1, 0, 131072, 1, 0)
+
+[node name="Mark" type="Sprite2D" parent="."]
+position = Vector2(192, 256)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0nsbn")
+
+[node name="Wand" type="Sprite2D" parent="Mark"]
+texture = ExtResource("4_lqlv8")
+
+[node name="Sparkles" type="GPUParticles2D" parent="Mark/Wand"]
+position = Vector2(190, 294)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_px2jh")
+texture = ExtResource("5_fvndu")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Mark/Wand"]
+position = Vector2(190, 294)
+stream = ExtResource("6_85c0r")
+volume_db = -20.0
+autoplay = true
+bus = &"Sound"
+
+[node name="Paul" type="AnimatedSprite2D" parent="."]
+position = Vector2(832, 256)
+scale = Vector2(-0.5, 0.5)
+sprite_frames = ExtResource("3_rmo1f")
+autoplay = "default"
+frame_progress = 0.556031
 
 [node name="Game Name" type="Label" parent="."]
 layout_mode = 0
@@ -356,6 +413,7 @@ autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="Menu/Start the Game" to="." method="_on_start_the_game_pressed"]
+[connection signal="pressed" from="Menu/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Menu/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Menu/Developers" to="." method="_on_developers_pressed"]
 [connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]

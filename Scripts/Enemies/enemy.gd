@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Flipping
 
 class_name Enemy
 
