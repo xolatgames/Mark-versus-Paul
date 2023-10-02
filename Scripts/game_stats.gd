@@ -16,6 +16,11 @@ var already_spelling = false
 var healing_delay = 10.0
 var healing_delay_left = 0.0
 var healing_strength = 1
+var undead = false
+
+
+func _process(delta):
+	milk_count = get_tree().get_nodes_in_group("milk").size()
 
 
 func _physics_process(delta):
@@ -35,6 +40,13 @@ func showSpellDescription(spell_name, texture, description):
 			i.showSpellDescription(spell_name, texture, description)
 
 
+func showDialog(char_name, texture, telling):
+	for i in get_tree().current_scene.get_children():
+		if i is GameUI:
+			i.showDialog(char_name, texture, telling)
+
+
 func takeDamage(damage):
-	healing_delay_left = healing_delay
-	health -= damage
+	if !undead:
+		healing_delay_left = healing_delay
+		health -= damage

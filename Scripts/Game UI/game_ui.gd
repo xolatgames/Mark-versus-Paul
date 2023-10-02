@@ -1,4 +1,4 @@
-extends SpellDescription
+extends ExtendedGameUI
 
 class_name  GameUI
 
@@ -29,3 +29,9 @@ func shortcuts():
 	if Input.is_action_just_pressed("cheat console"):
 		await  get_tree().process_frame
 		$"Cheat Console".show()
+
+
+func _on_tree_exiting():
+	var packed = PackedScene.new()
+	packed.pack(get_tree().current_scene)
+	ResourceSaver.save(packed, "user://game.tscn")
