@@ -16,6 +16,12 @@ func _on_enter_the_code_text_submitted(cheat):
 		"spells":
 			GameStats.spells()
 			print("cheat activated!")
+		"undead":
+			GameStats.undead = true
+			print("cheat activated!")
+		"mortal":
+			GameStats.undead = false
+			print("cheat activated!")
 	
 	$"Enter the Code".text = ""
 	hide()

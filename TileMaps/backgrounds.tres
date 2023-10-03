@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=27 format=3 uid="uid://dyuaj2bnlk2f4"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://dyuaj2bnlk2f4"]
 
 [ext_resource type="Texture2D" uid="uid://ceyij0bs1ocqd" path="res://Sprites/Environment/Tree.svg" id="1_3xtum"]
 [ext_resource type="Texture2D" uid="uid://cmbo1kd787ynt" path="res://Sprites/Backgrounds/Grass.svg" id="1_wdp5t"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://pbp4bo1a6d16" path="res://Sprites/Backgrounds/Wall Wood.svg" id="5_dr4mt"]
 [ext_resource type="Texture2D" uid="uid://xmbgoycxg5d4" path="res://Sprites/Backgrounds/Hell.svg" id="5_dva8t"]
 [ext_resource type="Texture2D" uid="uid://bxlr5ub1esxfu" path="res://Sprites/Backgrounds/Wood.svg" id="6_50d6j"]
+[ext_resource type="Texture2D" uid="uid://n4t55iwod84p" path="res://Sprites/Decor/Fire.svg" id="6_ei2lv"]
 [ext_resource type="Texture2D" uid="uid://bduwt71mnr2qr" path="res://Sprites/Backgrounds/Wall Wood with the window.svg" id="7_434gu"]
 [ext_resource type="Texture2D" uid="uid://cj1lcww72m87t" path="res://Sprites/Decor/Bed.svg" id="8_y1iox"]
 [ext_resource type="Texture2D" uid="uid://c53l3nn60ayxn" path="res://Sprites/Decor/Chest.svg" id="9_2n617"]
@@ -56,6 +57,17 @@ texture_region_size = Vector2i(512, 512)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ru0xy"]
 texture = ExtResource("5_dva8t")
 texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6rwwr"]
+texture = ExtResource("6_ei2lv")
+texture_region_size = Vector2i(512, 512)
+0:0/animation_columns = 2
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -151,3 +163,4 @@ sources/9 = SubResource("TileSetAtlasSource_hkemo")
 sources/10 = SubResource("TileSetAtlasSource_tjayy")
 sources/11 = SubResource("TileSetAtlasSource_w67jg")
 sources/12 = SubResource("TileSetAtlasSource_ru0xy")
+sources/13 = SubResource("TileSetAtlasSource_6rwwr")
