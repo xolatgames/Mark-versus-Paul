@@ -4,7 +4,7 @@ The action-adventure game where you play as Mark. You are the wizard and can spe
 
 Music by timbeek.com
 
-https://github.com/xolatgames/Mark-versus-Paul/assets/64919860/278419e7-4a2f-43be-9189-b07c15a3e734
+https://github.com/xolatgames/Mark-versus-Paul/assets/64919860/da2621b9-c9c7-4f43-aa36-915759bbe443
 
 What can we do?
 
@@ -12,11 +12,11 @@ We already have:
 
 > Move, do somersaults and cast any of the eight spells
 
-> Main menu, tutorial and the forest level!
+> Main menu, tutorial and another two levels!
 
-> Cheat's console with 3 varieties of the cheats
+> Cheat's console with 4 varieties of the cheats
 
-> One of the type of the enemies
+> Two of the type of the enemies
 
 > Sound and music effects, and setup volume of them
 
