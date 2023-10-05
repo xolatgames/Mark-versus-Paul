@@ -1,4 +1,4 @@
-# Mark versus Paul
+![Mark versus Paul](https://github.com/xolatgames/Mark-versus-Paul/assets/64919860/8527ed9b-af4e-4df0-beec-9b8bcb9ed9c1)
 
 The action-adventure game where you play as Mark. You are the wizard and can spell a magic.
 
