@@ -1,23 +1,25 @@
 # Mark versus Paul
 
-The action-adventure game where you play as Mark. Youre the wizard and can spell a magic.
+The action-adventure game where you play as Mark. You are the wizard and can spell a magic.
 
 Music by timbeek.com
 
-https://github.com/xolatgames/Mark-versus-Paul/assets/64919860/ce4e3770-59c4-4b75-8002-003f579541e8
+https://github.com/xolatgames/Mark-versus-Paul/assets/64919860/278419e7-4a2f-43be-9189-b07c15a3e734
 
-What can you do?
+What can we do?
 
-You already have:
+We already have:
 
 > Move, do somersaults and cast any of the eight spells
 
-> Main menu, game menu and tutorial already done!
+> Main menu, tutorial and the forest level!
 
-> Cheat's console core
+> Cheat's console with 3 varieties of the cheats
 
-> One of the enemies
+> One of the type of the enemies
 
 > Sound and music effects, and setup volume of them
+
+> The story has begin!
 
 That's it! Yet...

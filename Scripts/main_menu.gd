@@ -13,7 +13,14 @@ func _process(delta):
 
 
 func _on_start_the_game_pressed():
+	GameStats.newGame()
 	get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")
+
+
+func _on_continue_pressed():
+	if FileAccess.file_exists("user://game.tscn") and FileAccess.file_exists("user://game.ini"):
+		GameStats.loadGame()
+		get_tree().change_scene_to_file("user://game.tscn")
 
 
 func _on_options_pressed():

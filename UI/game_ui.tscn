@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://vvf028rd583w"]
+[gd_scene load_steps=17 format=3 uid="uid://vvf028rd583w"]
 
 [ext_resource type="Script" path="res://Scripts/Game UI/game_ui.gd" id="1_hbv0l"]
 [ext_resource type="Texture2D" uid="uid://7mdqc7j2uv28" path="res://Sprites/Game UI/Icons/Health.svg" id="2_wbaq1"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://c07ltvbikmhke" path="res://Sprites/Game UI/Bars/Experience.svg" id="8_nrd2e"]
 [ext_resource type="Texture2D" uid="uid://c5tx3jt31sn1y" path="res://Sprites/Game UI/Counter.svg" id="9_v4yw5"]
 [ext_resource type="LabelSettings" uid="uid://balgng1bimial" path="res://Fonts/24p font.tres" id="10_i21y5"]
-[ext_resource type="Texture2D" uid="uid://cocebr2lpc5qv" path="res://Sprites/Game UI/Icons/Milk Counter.svg" id="11_6fr25"]
+[ext_resource type="Texture2D" uid="uid://cocebr2lpc5qv" path="res://Sprites/Entities/Milk.svg" id="11_6fr25"]
 [ext_resource type="PackedScene" uid="uid://bnqyu7dx0cva8" path="res://UI/spellbook.tscn" id="12_6jo34"]
 [ext_resource type="PackedScene" uid="uid://0cvq7q4vq2fv" path="res://UI/cheat_console.tscn" id="13_q7dv4"]
 [ext_resource type="PackedScene" uid="uid://xsjfft4f7bop" path="res://UI/spell_discription.tscn" id="14_hthoe"]
 [ext_resource type="PackedScene" uid="uid://b47bchwe64fii" path="res://UI/game_menu.tscn" id="15_x4xtr"]
+[ext_resource type="PackedScene" uid="uid://cyap0upp4nfpi" path="res://UI/dialog.tscn" id="16_3djfk"]
 
 [node name="Game UI" type="CanvasLayer"]
 script = ExtResource("1_hbv0l")
@@ -167,3 +168,8 @@ visible = false
 
 [node name="Game menu" parent="." instance=ExtResource("15_x4xtr")]
 visible = false
+
+[node name="Dialog" parent="." instance=ExtResource("16_3djfk")]
+visible = false
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

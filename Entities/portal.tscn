@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://crc8k5vrcl6c7"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/portal.gd" id="1_a5hiu"]
-[ext_resource type="Texture2D" uid="uid://b18ax81ke5skf" path="res://Sprites/Environment/Portal/Activate portal.svg" id="1_o5g8g"]
-[ext_resource type="Texture2D" uid="uid://bugclqbubi4xa" path="res://Sprites/Environment/Portal/Portal.svg" id="2_wktdl"]
+[ext_resource type="Texture2D" uid="uid://b18ax81ke5skf" path="res://Sprites/Entities/Portal/Activate portal.svg" id="1_o5g8g"]
+[ext_resource type="Texture2D" uid="uid://bugclqbubi4xa" path="res://Sprites/Entities/Portal/Portal.svg" id="2_wktdl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_giko2"]
 animations = [{

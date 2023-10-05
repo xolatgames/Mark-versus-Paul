@@ -71,7 +71,7 @@ speed = 50
 position = Vector2(-9.53674e-07, -16)
 scale = Vector2(0.0625, 0.0625)
 sprite_frames = SubResource("SpriteFrames_uhht2")
-animation = &"Attack"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

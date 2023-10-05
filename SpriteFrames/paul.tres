@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://lxjl8lvhom4k"]
+
+[ext_resource type="Texture2D" uid="uid://cc0javpms1k4m" path="res://Sprites/NPC/Paul/Paul.svg" id="1_8lynd"]
+[ext_resource type="Texture2D" uid="uid://bpmlbj174ljj0" path="res://Sprites/NPC/Paul/Paul frame 2.svg" id="2_5cgrs"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8lynd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5cgrs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
