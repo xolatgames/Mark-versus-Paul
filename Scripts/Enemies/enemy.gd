@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Flipping
 
 class_name Enemy
 
@@ -11,9 +11,9 @@ var neutralize = false
 
 func pushing():
 	$"Pushing sound".play()
-	health -= 50
+	health -= 50 * (GameStats.level / 5 + 1)
 
 
 func damaging(taking_damage):
 	$Damaged.play()
-	health -= taking_damage
+	health -= taking_damage * (GameStats.level / 5 + 1)

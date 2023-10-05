@@ -2,7 +2,7 @@ extends Area2D
 
 class_name Blizzard
 
-var damage = 3
+var damage = 5
 
 
 func _on_body_entered(body):
