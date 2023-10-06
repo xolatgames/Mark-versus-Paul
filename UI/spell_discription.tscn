@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://xsjfft4f7bop"]
 
-[ext_resource type="AudioStream" uid="uid://ds64v6io6xktb" path="res://Sounds/paper multiple sheets rip 4.wav" id="1_1yve4"]
+[ext_resource type="AudioStream" uid="uid://byb75ak6oornk" path="res://Sounds/Writing.wav" id="1_sn5fj"]
 
 [node name="Spell discription" type="CanvasLayer"]
 metadata/_edit_vertical_guides_ = [480.0]
@@ -47,5 +47,5 @@ text = "Close"
 alignment = 2
 
 [node name="New spell" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_1yve4")
+stream = ExtResource("1_sn5fj")
 bus = &"Sound"

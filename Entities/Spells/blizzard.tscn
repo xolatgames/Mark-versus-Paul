@@ -15,7 +15,7 @@ scale_min = 0.02
 scale_max = 0.02
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ohx1"]
-radius = 64.0
+radius = 96.0
 
 [sub_resource type="Animation" id="Animation_4vn7v"]
 resource_name = "Finish"

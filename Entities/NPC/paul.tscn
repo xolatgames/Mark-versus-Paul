@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://drsnhe86mwfm3"]
+
+[ext_resource type="SpriteFrames" uid="uid://lxjl8lvhom4k" path="res://SpriteFrames/paul.tres" id="1_ve21e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i672d"]
+size = Vector2(32, 32)
+
+[node name="Paul" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, -16)
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = ExtResource("1_ve21e")
+autoplay = "default"
+frame_progress = 0.853792
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i672d")

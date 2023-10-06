@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://du4wwrdsvccxf"]
+
+[ext_resource type="AudioStream" uid="uid://1ns6cnsrff58" path="res://Music/New Road Loop.ogg" id="1_cbldu"]
+
+[sub_resource type="Gradient" id="Gradient_v51ti"]
+colors = PackedColorArray(0, 0, 0, 1, 0.212305, 0.212305, 0.212305, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0afva"]
+gradient = SubResource("Gradient_v51ti")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_rli3u"]
+resource_name = "Fade In"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iu0im"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drubk"]
+_data = {
+"Fade In": SubResource("Animation_rli3u"),
+"RESET": SubResource("Animation_iu0im")
+}
+
+[node name="The End" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 672.0
+texture = SubResource("GradientTexture2D_0afva")
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 640.0
+text = "Thanks for playing first BETA! ;)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Fade In"
+libraries = {
+"": SubResource("AnimationLibrary_drubk")
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_cbldu")
+autoplay = true
+bus = &"Music"

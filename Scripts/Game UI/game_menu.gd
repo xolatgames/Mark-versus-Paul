@@ -23,6 +23,10 @@ func _on_continue_pressed():
 	hide()
 
 
+func _on_restart_the_level_pressed():
+	GameStats.restartLevel()
+
+
 func _on_options_pressed():
 	$Options.show()
 

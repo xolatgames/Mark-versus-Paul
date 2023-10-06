@@ -1,0 +1,102 @@
+[gd_scene load_steps=13 format=3 uid="uid://vk6j1mkfgm6o"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/ranger.gd" id="1_1nuwc"]
+[ext_resource type="Texture2D" uid="uid://bh6lm2mm2fh0r" path="res://Sprites/Enemies/Fish/Attack.svg" id="2_qfwrf"]
+[ext_resource type="Texture2D" uid="uid://b04m3wkswtk3a" path="res://Sprites/Enemies/Fish/Idle.svg" id="2_ud7jv"]
+[ext_resource type="Texture2D" uid="uid://ce5pnmscgacas" path="res://Sprites/Enemies/Fish/Walk.svg" id="3_tnlil"]
+[ext_resource type="Texture2D" uid="uid://didlnflodvjie" path="res://Sprites/Enemies/Fish/Neutralize.svg" id="4_g7md2"]
+[ext_resource type="Texture2D" uid="uid://djnhfsl4jvnvk" path="res://Sprites/Enemies/Fish/Neutralize frame 2.svg" id="5_nyfy1"]
+[ext_resource type="AudioStream" uid="uid://d3gj5nasldej6" path="res://Sounds/Footsteps_WaterV1_Walk_01.wav" id="7_jcfry"]
+[ext_resource type="AudioStream" uid="uid://jmeis20dlna8" path="res://Sounds/Footsteps_Water_Run_02.wav" id="8_774gn"]
+[ext_resource type="AudioStream" uid="uid://bw5x2kqsirire" path="res://Sounds/WaterSplash2.wav" id="10_ixn2t"]
+[ext_resource type="AudioStream" uid="uid://dihnpc6njtg2p" path="res://Sounds/03_crate_open_1.wav" id="12_cv15u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wig2j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qfwrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ud7jv")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ud7jv")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g7md2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nyfy1")
+}],
+"loop": true,
+"name": &"Neutralize",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ud7jv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tnlil")
+}],
+"loop": false,
+"name": &"Walk",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4ux"]
+size = Vector2(24, 24)
+
+[node name="Fish" type="CharacterBody2D"]
+script = ExtResource("1_1nuwc")
+bullet = "spit"
+speed = 20
+damage_radius = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = SubResource("SpriteFrames_wig2j")
+animation = &"Attack"
+autoplay = "Idle"
+frame = 1
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fs4ux")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Walk sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_jcfry")
+bus = &"Sound"
+
+[node name="Attack sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_774gn")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="Pushing sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_cv15u")
+bus = &"Sound"
+
+[node name="Damaged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ixn2t")
+volume_db = -10.0
+bus = &"Sound"
+
+[node name="Attacking" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Attacking" to="." method="_on_attacking_timeout"]

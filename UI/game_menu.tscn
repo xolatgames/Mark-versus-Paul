@@ -16,9 +16,9 @@ offset_bottom = 544.0
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 96.0
+offset_top = 64.0
 offset_right = 640.0
-offset_bottom = 160.0
+offset_bottom = 128.0
 text = "Game menu"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -26,27 +26,36 @@ vertical_alignment = 1
 [node name="Continue" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 160.0
+offset_top = 128.0
 offset_right = 640.0
-offset_bottom = 224.0
+offset_bottom = 192.0
 mouse_default_cursor_shape = 2
 text = "Continue"
+
+[node name="Restart the level" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 640.0
+offset_bottom = 256.0
+mouse_default_cursor_shape = 2
+text = "Restart the level"
 
 [node name="Options" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 224.0
+offset_top = 256.0
 offset_right = 640.0
-offset_bottom = 288.0
+offset_bottom = 320.0
 mouse_default_cursor_shape = 2
 text = "Options"
 
 [node name="Main menu" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 288.0
+offset_top = 320.0
 offset_right = 640.0
-offset_bottom = 352.0
+offset_bottom = 384.0
 mouse_default_cursor_shape = 2
 text = "Main menu"
 
@@ -56,5 +65,6 @@ anchors_preset = 0
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/Restart the level" to="." method="_on_restart_the_level_pressed"]
 [connection signal="pressed" from="Panel/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Panel/Main menu" to="." method="_on_main_menu_pressed"]
