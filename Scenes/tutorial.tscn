@@ -7,7 +7,7 @@
 [ext_resource type="Theme" uid="uid://cgdkjpsig33g8" path="res://Themes/game.tres" id="4_8wdky"]
 [ext_resource type="PackedScene" uid="uid://ddu56rt1pnwib" path="res://Entities/crate.tscn" id="5_j5ra7"]
 [ext_resource type="PackedScene" uid="uid://n8fmgufr45u" path="res://Entities/scroll.tscn" id="5_p6t66"]
-[ext_resource type="PackedScene" uid="uid://dvved1plpdfdh" path="res://Entities/orc.tscn" id="6_5rpgy"]
+[ext_resource type="PackedScene" uid="uid://dvved1plpdfdh" path="res://Entities/Enemies/orc.tscn" id="6_5rpgy"]
 [ext_resource type="PackedScene" uid="uid://crc8k5vrcl6c7" path="res://Entities/portal.tscn" id="9_23ep8"]
 [ext_resource type="AudioStream" uid="uid://dxun3isubgojj" path="res://Ambients/forest - wind, birds.wav" id="10_btsx5"]
 [ext_resource type="AudioStream" uid="uid://dtjdjterkna57" path="res://Music/Friday Afternoon Loop.ogg" id="11_qdk2p"]

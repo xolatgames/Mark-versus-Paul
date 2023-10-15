@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://xsjfft4f7bop"]
+[gd_scene load_steps=3 format=3 uid="uid://xsjfft4f7bop"]
 
-[ext_resource type="AudioStream" uid="uid://ds64v6io6xktb" path="res://Sounds/paper multiple sheets rip 4.wav" id="1_1yve4"]
+[ext_resource type="Script" path="res://Scripts/Game UI/spell_discription.gd" id="1_rwea5"]
+[ext_resource type="AudioStream" uid="uid://byb75ak6oornk" path="res://Sounds/Writing.wav" id="1_sn5fj"]
 
 [node name="Spell discription" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_rwea5")
 metadata/_edit_vertical_guides_ = [480.0]
 
 [node name="Panel" type="Panel" parent="."]
@@ -47,5 +50,8 @@ text = "Close"
 alignment = 2
 
 [node name="New spell" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_1yve4")
+stream = ExtResource("1_sn5fj")
 bus = &"Sound"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]

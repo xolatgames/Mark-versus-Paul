@@ -1,0 +1,770 @@
+[gd_scene load_steps=55 format=3 uid="uid://nlqb5olbw38r"]
+
+[ext_resource type="TileSet" uid="uid://dyuaj2bnlk2f4" path="res://TileMaps/backgrounds.tres" id="1_t85m8"]
+[ext_resource type="Script" path="res://Scripts/triggers.gd" id="1_v2cca"]
+[ext_resource type="PackedScene" uid="uid://vvf028rd583w" path="res://UI/game_ui.tscn" id="2_6cu20"]
+[ext_resource type="Script" path="res://Scripts/Dancing/Time left.gd" id="3_5bi05"]
+[ext_resource type="Texture2D" uid="uid://br4t6jvmxcs8t" path="res://Sprites/Game UI/Icons/Time.svg" id="3_08k7o"]
+[ext_resource type="Texture2D" uid="uid://di4b1qy1jij6r" path="res://Sprites/Dancing/Characters/Mark/Dancing.svg" id="3_c0hw4"]
+[ext_resource type="Texture2D" uid="uid://b0n1nmejsjmhx" path="res://Sprites/Mark/Body/Idle.svg" id="3_ydyt6"]
+[ext_resource type="Texture2D" uid="uid://c84a36wbw4lsh" path="res://Sprites/Dancing/Characters/Mark/Dancing frame 2.svg" id="4_g8qn5"]
+[ext_resource type="Texture2D" uid="uid://dp2cgt1h5nuvm" path="res://Sprites/Mark/Body/Walk.svg" id="4_n7rn1"]
+[ext_resource type="Texture2D" uid="uid://c14p1ofro0deh" path="res://Sprites/Game UI/Bars/Hollow.svg" id="4_oj358"]
+[ext_resource type="Texture2D" uid="uid://f5anst75miug" path="res://Sprites/Game UI/Bars/Time.svg" id="5_edyv3"]
+[ext_resource type="Texture2D" uid="uid://cqu8x5coxyurr" path="res://Sprites/Mark/Hand/Idle.svg" id="5_neycq"]
+[ext_resource type="Texture2D" uid="uid://da1ml624r6vri" path="res://Sprites/Dancing/Characters/Mark/Dancing frame 3.svg" id="5_uvbxd"]
+[ext_resource type="Texture2D" uid="uid://cadkpxj0ehx6u" path="res://Sprites/Dancing/Characters/Orc/Idle.svg" id="6_8hqj4"]
+[ext_resource type="Texture2D" uid="uid://8jbil07jd7ev" path="res://Sprites/Dancing/Characters/Mark/Dancing frame 4.svg" id="6_pyuri"]
+[ext_resource type="Texture2D" uid="uid://cg5ig0or1rk8b" path="res://Sprites/Dancing/Characters/Orc/Dancing.svg" id="6_rqm1c"]
+[ext_resource type="Texture2D" uid="uid://bnsf5b1vi5q3" path="res://Sprites/Dancing/Characters/Mark/Dancing frame 5.svg" id="7_0boog"]
+[ext_resource type="Texture2D" uid="uid://dnqw235h8qe4m" path="res://Sprites/Dancing/Characters/Mark/Dancing frame 6.svg" id="8_6sjm1"]
+[ext_resource type="Texture2D" uid="uid://ccofentiv6awn" path="res://Sprites/Dancing/Characters/Orc/Dancing frame 3.svg" id="8_hberv"]
+[ext_resource type="Texture2D" uid="uid://sbcotb4v254u" path="res://Sprites/Dancing/Characters/Orc/Dancing frame 4.svg" id="9_ub0dh"]
+[ext_resource type="Texture2D" uid="uid://fmpeugu3t7uc" path="res://Sprites/Dancing/Characters/Orc/Dancing frame 5.svg" id="10_34cdv"]
+[ext_resource type="Texture2D" uid="uid://ca0wiexw5r5cs" path="res://Sprites/Dancing/Characters/Orc/Dancing frame 6.svg" id="11_jhcpq"]
+[ext_resource type="AudioStream" uid="uid://b51a5d2torxtt" path="res://Music/Anime Beat Loop.ogg" id="18_o4nbp"]
+[ext_resource type="Texture2D" uid="uid://dspybqktsfoon" path="res://Sprites/Dancing/Characters/Orc/zzz.svg" id="23_fmbvc"]
+[ext_resource type="Texture2D" uid="uid://csbaifqtqvqep" path="res://Sprites/Dancing/Characters/Orc/zzz frame 2.svg" id="24_flgki"]
+[ext_resource type="AudioStream" uid="uid://bsdb2qrgo2cgu" path="res://Sounds/African2.wav" id="25_enylm"]
+[ext_resource type="AudioStream" uid="uid://5cqeaj1c03xg" path="res://Sounds/Retro11.wav" id="26_aigax"]
+[ext_resource type="Texture2D" uid="uid://dioiwcs3rgc8" path="res://Sprites/Dancing/Arrows/Up/Up.svg" id="26_heovs"]
+[ext_resource type="Texture2D" uid="uid://bleng0v2lkjoa" path="res://Sprites/Dancing/Arrows/Up/Up for press.svg" id="26_ra0pd"]
+[ext_resource type="Script" path="res://Scripts/Dancing/Dancing controller.gd" id="26_wx0k2"]
+[ext_resource type="Texture2D" uid="uid://bx26ir8kcejri" path="res://Sprites/Dancing/Arrows/Up/Up is Right.svg" id="27_wtc5m"]
+[ext_resource type="Texture2D" uid="uid://db688ac7i86if" path="res://Sprites/Dancing/Arrows/Up/Up is Wrong.svg" id="29_do4bc"]
+[ext_resource type="Texture2D" uid="uid://cprjs6uh7vad6" path="res://Sprites/Dancing/Arrows/Left/Left for press.svg" id="30_qhcr5"]
+[ext_resource type="Texture2D" uid="uid://cv3m8uqky63b" path="res://Sprites/Dancing/Arrows/Left/Left is Right.svg" id="31_f0rdp"]
+[ext_resource type="Texture2D" uid="uid://dxgalhosf7oxm" path="res://Sprites/Dancing/Arrows/Left/Left.svg" id="32_uvptm"]
+[ext_resource type="Texture2D" uid="uid://fqkeahyxdm57" path="res://Sprites/Dancing/Arrows/Left/Left is Wrong.svg" id="33_61071"]
+[ext_resource type="Texture2D" uid="uid://je2hto4otwbq" path="res://Sprites/Dancing/Arrows/Right/Right for press.svg" id="34_6b2sw"]
+[ext_resource type="Texture2D" uid="uid://28p3chxab7ix" path="res://Sprites/Dancing/Arrows/Right/Right is Yeap.svg" id="35_waugm"]
+[ext_resource type="Texture2D" uid="uid://c5x062uq1546j" path="res://Sprites/Dancing/Arrows/Right/Right.svg" id="36_fcgdf"]
+[ext_resource type="Texture2D" uid="uid://bqf1j1esf3u0b" path="res://Sprites/Dancing/Arrows/Right/Right is Wrong.svg" id="37_s8jk1"]
+[ext_resource type="Texture2D" uid="uid://b8p7b6yv5m52b" path="res://Sprites/Dancing/Arrows/Down/Down for press.svg" id="38_udoye"]
+[ext_resource type="Texture2D" uid="uid://gyvshfqesff6" path="res://Sprites/Dancing/Arrows/Down/Down is Right.svg" id="39_41rxj"]
+[ext_resource type="Texture2D" uid="uid://dwyt1kfpgnj2y" path="res://Sprites/Dancing/Arrows/Down/Down.svg" id="40_4ygej"]
+[ext_resource type="Texture2D" uid="uid://bdydgoku23gbs" path="res://Sprites/Dancing/Arrows/Down/Down is Wrong.svg" id="41_4nrir"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ti7xh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_ra0pd")
+}],
+"loop": true,
+"name": &"Press me",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_wtc5m")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_heovs")
+}],
+"loop": true,
+"name": &"Simple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_do4bc")
+}],
+"loop": true,
+"name": &"Wrong",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wnnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_qhcr5")
+}],
+"loop": true,
+"name": &"Press me",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_f0rdp")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_uvptm")
+}],
+"loop": true,
+"name": &"Simple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_61071")
+}],
+"loop": true,
+"name": &"Wrong",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n428b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_6b2sw")
+}],
+"loop": true,
+"name": &"Press me",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_waugm")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_fcgdf")
+}],
+"loop": true,
+"name": &"Simple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_s8jk1")
+}],
+"loop": true,
+"name": &"Wrong",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kbph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_udoye")
+}],
+"loop": true,
+"name": &"Press me",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_41rxj")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_4ygej")
+}],
+"loop": true,
+"name": &"Simple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_4nrir")
+}],
+"loop": true,
+"name": &"Wrong",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbhrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c0hw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g8qn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c0hw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uvbxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c0hw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g8qn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c0hw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uvbxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c0hw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g8qn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c0hw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uvbxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pyuri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0boog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6sjm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0boog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pyuri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0boog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6sjm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0boog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pyuri")
+}],
+"loop": true,
+"name": &"Dancing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c0hw4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ydyt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n7rn1")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_astgk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rqm1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8hqj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hberv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8hqj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rqm1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8hqj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hberv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ub0dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_34cdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jhcpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_34cdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ub0dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_34cdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jhcpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_34cdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ub0dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_34cdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jhcpq")
+}],
+"loop": true,
+"name": &"Dancing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8hqj4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_fmbvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_flgki")
+}],
+"loop": true,
+"name": &"zzz",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_eyaf7"]
+resource_name = "Dancing"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mark:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-32, 320), Vector2(128, 320)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [3],
+"method": &"callTheTrigger"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mark/Hand:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Time left/Timer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mark")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [&"Walk", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"Idle", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"Dancing", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Orc")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"Idle", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"Dancing", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Dancing controller/Timer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Music:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_lo603"]
+resource_name = "Over"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Orc")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"Dancing", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"zzz", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mark")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [&"Dancing", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"Idle", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"Walk", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Mark/Hand:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Mark:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(128, 320), Vector2(128, 320), Vector2(1056, 448)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Dancing controller/Timer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Music:autoplay")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [6],
+"method": &"callTheTrigger"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_kxg4i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mark:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-32, 320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mark/Hand:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Music:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Music:autoplay")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xe1p1"]
+_data = {
+"Dancing": SubResource("Animation_eyaf7"),
+"Over": SubResource("Animation_lo603"),
+"RESET": SubResource("Animation_kxg4i")
+}
+
+[node name="Dancing" type="Node2D"]
+script = ExtResource("1_v2cca")
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(0.125, 0.125)
+tile_set = ExtResource("1_t85m8")
+format = 2
+layer_0/name = "background"
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 393216, 1, 0, 458752, 1, 0, 524288, 1, 0, 589824, 1, 0, 655360, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 1, 0, 196609, 1, 0, 262145, 1, 0, 327681, 1, 0, 393217, 1, 0, 458753, 1, 0, 524289, 1, 0, 589825, 1, 0, 655361, 1, 0, 2, 1, 0, 65538, 1, 0, 131074, 1, 0, 196610, 1, 0, 262146, 1, 0, 327682, 1, 0, 393218, 1, 0, 458754, 1, 0, 524290, 1, 0, 589826, 1, 0, 655362, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, 196611, 1, 0, 262147, 1, 0, 327683, 1, 0, 393219, 1, 0, 458755, 1, 0, 524291, 1, 0, 589827, 1, 0, 655363, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, 196612, 1, 0, 262148, 1, 0, 327684, 1, 0, 393220, 1, 0, 458756, 1, 0, 524292, 1, 0, 589828, 1, 0, 655364, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 1, 0, 196613, 1, 0, 262149, 1, 0, 327685, 1, 0, 393221, 1, 0, 458757, 1, 0, 524293, 1, 0, 589829, 1, 0, 655365, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 1, 0, 196614, 1, 0, 262150, 1, 0, 327686, 1, 0, 393222, 1, 0, 458758, 1, 0, 524294, 1, 0, 589830, 1, 0, 655366, 1, 0, 7, 1, 0, 65543, 1, 0, 131079, 1, 0, 196615, 1, 0, 262151, 1, 0, 327687, 1, 0, 393223, 1, 0, 458759, 1, 0, 524295, 1, 0, 589831, 1, 0, 655367, 1, 0, 8, 1, 0, 65544, 1, 0, 131080, 1, 0, 196616, 1, 0, 262152, 1, 0, 327688, 1, 0, 393224, 1, 0, 458760, 1, 0, 524296, 1, 0, 589832, 1, 0, 655368, 1, 0, 9, 1, 0, 65545, 1, 0, 131081, 1, 0, 196617, 1, 0, 262153, 1, 0, 327689, 1, 0, 393225, 1, 0, 458761, 1, 0, 524297, 1, 0, 589833, 1, 0, 655369, 1, 0, 10, 1, 0, 65546, 1, 0, 131082, 1, 0, 196618, 1, 0, 262154, 1, 0, 327690, 1, 0, 393226, 1, 0, 458762, 1, 0, 524298, 1, 0, 589834, 1, 0, 655370, 1, 0, 11, 1, 0, 65547, 1, 0, 131083, 1, 0, 196619, 1, 0, 262155, 1, 0, 327691, 1, 0, 393227, 1, 0, 458763, 1, 0, 524299, 1, 0, 589835, 1, 0, 655371, 1, 0, 12, 1, 0, 65548, 1, 0, 131084, 1, 0, 196620, 1, 0, 262156, 1, 0, 327692, 1, 0, 393228, 1, 0, 458764, 1, 0, 524300, 1, 0, 589836, 1, 0, 655372, 1, 0, 13, 1, 0, 65549, 1, 0, 131085, 1, 0, 196621, 1, 0, 262157, 1, 0, 327693, 1, 0, 393229, 1, 0, 458765, 1, 0, 524301, 1, 0, 589837, 1, 0, 655373, 1, 0, 14, 1, 0, 65550, 1, 0, 131086, 1, 0, 196622, 1, 0, 262158, 1, 0, 327694, 1, 0, 393230, 1, 0, 458766, 1, 0, 524302, 1, 0, 589838, 1, 0, 655374, 1, 0, 15, 1, 0, 65551, 1, 0, 131087, 1, 0, 196623, 1, 0, 262159, 1, 0, 327695, 1, 0, 393231, 1, 0, 458767, 1, 0, 524303, 1, 0, 589839, 1, 0, 655375, 1, 0)
+layer_1/name = "trees"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 1, 0, 0, 65537, 0, 0, 2, 0, 0, 65538, 0, 0, 3, 0, 0, 65539, 0, 0, 4, 0, 0, 65540, 0, 0, 5, 0, 0, 65541, 0, 0, 6, 0, 0, 65542, 0, 0, 7, 0, 0, 65543, 0, 0, 8, 0, 0, 65544, 0, 0, 9, 0, 0, 65545, 0, 0, 10, 0, 0, 65546, 0, 0, 11, 0, 0, 65547, 0, 0, 12, 0, 0, 65548, 0, 0, 13, 0, 0, 65549, 0, 0, 14, 0, 0, 65550, 0, 0, 15, 0, 0, 65551, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 524289, 0, 0, 589825, 0, 0, 655361, 0, 0, 524290, 0, 0, 589826, 0, 0, 655362, 0, 0, 524291, 0, 0, 589827, 0, 0, 655363, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 524293, 0, 0, 589829, 0, 0, 655365, 0, 0, 524294, 0, 0, 589830, 0, 0, 655366, 0, 0, 524295, 0, 0, 589831, 0, 0, 655367, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 524297, 0, 0, 589833, 0, 0, 655369, 0, 0, 524298, 0, 0, 589834, 0, 0, 655370, 0, 0, 524299, 0, 0, 589835, 0, 0, 655371, 0, 0, 524300, 0, 0, 589836, 0, 0, 655372, 0, 0, 524301, 0, 0, 589837, 0, 0, 655373, 0, 0, 524302, 0, 0, 589838, 0, 0, 655374, 0, 0, 524303, 0, 0, 589839, 0, 0, 655375, 0, 0)
+
+[node name="Game UI" parent="." instance=ExtResource("2_6cu20")]
+
+[node name="Time left" type="CanvasLayer" parent="."]
+script = ExtResource("3_5bi05")
+
+[node name="Icon" type="TextureRect" parent="Time left"]
+offset_left = 320.0
+offset_top = 32.0
+offset_right = 352.0
+offset_bottom = 64.0
+texture = ExtResource("3_08k7o")
+expand_mode = 1
+
+[node name="Bar" type="TextureProgressBar" parent="Time left"]
+offset_left = 368.0
+offset_top = 32.0
+offset_right = 496.0
+offset_bottom = 64.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("4_oj358")
+texture_progress = ExtResource("5_edyv3")
+
+[node name="Timer" type="Timer" parent="Time left"]
+
+[node name="Dancing controller" type="Node2D" parent="."]
+script = ExtResource("26_wx0k2")
+
+[node name="Arrow Up" type="AnimatedSprite2D" parent="Dancing controller"]
+position = Vector2(512, 224)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_ti7xh")
+animation = &"Simple"
+
+[node name="Arrow Left" type="AnimatedSprite2D" parent="Dancing controller"]
+position = Vector2(416, 320)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_4wnnk")
+animation = &"Simple"
+
+[node name="Arrow Right" type="AnimatedSprite2D" parent="Dancing controller"]
+position = Vector2(608, 320)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_n428b")
+animation = &"Simple"
+
+[node name="Arrow Down" type="AnimatedSprite2D" parent="Dancing controller"]
+position = Vector2(512, 416)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_8kbph")
+animation = &"Simple"
+
+[node name="Right" type="AudioStreamPlayer2D" parent="Dancing controller"]
+position = Vector2(512, 320)
+stream = ExtResource("25_enylm")
+bus = &"Sound"
+
+[node name="Wrong" type="AudioStreamPlayer2D" parent="Dancing controller"]
+position = Vector2(512, 320)
+stream = ExtResource("26_aigax")
+bus = &"Sound"
+
+[node name="Timer" type="Timer" parent="Dancing controller"]
+
+[node name="Mark" type="AnimatedSprite2D" parent="."]
+position = Vector2(-32, 320)
+scale = Vector2(0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_pbhrp")
+animation = &"Idle"
+
+[node name="Hand" type="Sprite2D" parent="Mark"]
+texture = ExtResource("5_neycq")
+
+[node name="Orc" type="AnimatedSprite2D" parent="."]
+position = Vector2(928, 320)
+scale = Vector2(-0.125, 0.125)
+sprite_frames = SubResource("SpriteFrames_astgk")
+animation = &"zzz"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Dancing"
+libraries = {
+"": SubResource("AnimationLibrary_xe1p1")
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("18_o4nbp")
+volume_db = -20.0
+bus = &"Music"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="over_dancing" from="Time left" to="." method="callTheTrigger" binds= [4]]
+[connection signal="timeout" from="Time left/Timer" to="Time left" method="_on_timer_timeout"]
+[connection signal="lose" from="Dancing controller" to="." method="callTheTrigger" binds= [5]]
+[connection signal="timeout" from="Dancing controller/Timer" to="Dancing controller" method="_on_timer_timeout"]

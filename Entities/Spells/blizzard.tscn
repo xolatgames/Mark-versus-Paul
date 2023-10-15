@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://clsrj7jkief2j" path="res://Sounds/13_Ice_explosion_01.wav" id="3_08ohv"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ityby"]
-emission_shape = 3
-emission_box_extents = Vector3(32, 8, 1)
+emission_shape = 1
+emission_sphere_radius = 96.0
 particle_flag_disable_z = true
 gravity = Vector3(-100, 100, 0)
 orbit_velocity_min = 0.0
@@ -15,7 +15,7 @@ scale_min = 0.02
 scale_max = 0.02
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ohx1"]
-radius = 64.0
+radius = 96.0
 
 [sub_resource type="Animation" id="Animation_4vn7v"]
 resource_name = "Finish"
@@ -44,6 +44,7 @@ script = ExtResource("1_4npd2")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(32, -32)
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_ityby")
 texture = ExtResource("1_hajv8")
 

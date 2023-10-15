@@ -5,6 +5,8 @@ class_name GameMenu
 
 func _ready():
 	$"Options/Close".connect("pressed", Callable(self, "closeOptions"))
+	$"Options/Sound Set".value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Sound"))
+	$"Options/Music Set".value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
 
 
 func _process(delta):
@@ -21,6 +23,10 @@ func closeOptions():
 
 func _on_continue_pressed():
 	hide()
+
+
+func _on_restart_the_level_pressed():
+	GameStats.restartLevel()
 
 
 func _on_options_pressed():

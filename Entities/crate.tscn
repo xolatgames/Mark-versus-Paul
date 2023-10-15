@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddu56rt1pnwib"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/crate.gd" id="1_00v4v"]
-[ext_resource type="Texture2D" uid="uid://dkxryynu3aw57" path="res://Sprites/Environment/Crate.svg" id="2_xulbc"]
+[ext_resource type="Texture2D" uid="uid://dkxryynu3aw57" path="res://Sprites/Entities/Crate.svg" id="2_xulbc"]
 [ext_resource type="PackedScene" uid="uid://sd8bx6ittxt3" path="res://Entities/Spells/pickable.tscn" id="3_rrabp"]
 [ext_resource type="AudioStream" uid="uid://insfn0rbsua0" path="res://Sounds/Arcane_BuildupF1.wav" id="4_qcjgj"]
 

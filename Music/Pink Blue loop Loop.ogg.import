@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://h1r5cl8lgxmm"
+path="res://.godot/imported/Pink Blue loop Loop.ogg-514aeaed76a5ddcdb4e9cc68170d96cd.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Pink Blue loop Loop.ogg"
+dest_files=["res://.godot/imported/Pink Blue loop Loop.ogg-514aeaed76a5ddcdb4e9cc68170d96cd.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

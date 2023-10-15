@@ -16,6 +16,22 @@ func _on_enter_the_code_text_submitted(cheat):
 		"spells":
 			GameStats.spells()
 			print("cheat activated!")
+		"undead":
+			GameStats.undead = true
+			print("cheat activated!")
+		"mortal":
+			GameStats.undead = false
+			print("cheat activated!")
+		"drinking":
+			var milks = get_tree().get_nodes_in_group("milk")
+			for i in milks:
+				i.queue_free()
+		"next level":
+			print("cheat activated!")
+			GameStats.nextLevel()
+		"level up!":
+			GameStats.levelUp()
+			print("cheat activated!")
 	
 	$"Enter the Code".text = ""
 	hide()

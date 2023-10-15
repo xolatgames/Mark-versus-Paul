@@ -1,10 +1,6 @@
-extends SpellDescription
+extends ExtendedGameUI
 
 class_name  GameUI
-
-
-func _ready():
-	$"Spell discription/Panel/Close".connect("pressed", Callable(self, "closeDescription"))
 
 
 func _process(delta):

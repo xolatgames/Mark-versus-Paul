@@ -1,0 +1,126 @@
+[gd_scene load_steps=15 format=3 uid="uid://ka2a32pjir0r"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/ranger.gd" id="1_abo0f"]
+[ext_resource type="Texture2D" uid="uid://b8jhmy0vu1hkl" path="res://Sprites/Enemies/Demon/Fly.svg" id="2_s0gds"]
+[ext_resource type="Texture2D" uid="uid://b7fb1uwh2ra08" path="res://Sprites/Enemies/Demon/Attack.svg" id="3_23w2g"]
+[ext_resource type="Texture2D" uid="uid://ck5ocslj1k16j" path="res://Sprites/Enemies/Demon/Fly frame 2.svg" id="3_40qrw"]
+[ext_resource type="Texture2D" uid="uid://da2dd4o4tejjn" path="res://Sprites/Enemies/Demon/Attack frame 2.svg" id="4_dy6d6"]
+[ext_resource type="Texture2D" uid="uid://mqskw0l2wwge" path="res://Sprites/Enemies/Demon/Neutralize.svg" id="6_rt313"]
+[ext_resource type="Texture2D" uid="uid://dwu3u1nix4ta2" path="res://Sprites/Enemies/Demon/Neutralize frame 2.svg" id="7_yolo3"]
+[ext_resource type="AudioStream" uid="uid://1th6yj8snb8i" path="res://Sounds/35_Miss_Evade_02.wav" id="8_uy1sc"]
+[ext_resource type="AudioStream" uid="uid://dihnpc6njtg2p" path="res://Sounds/03_crate_open_1.wav" id="9_0mq6b"]
+[ext_resource type="AudioStream" uid="uid://0a53447se328" path="res://Sounds/Fire_AttackF3.wav" id="9_c0wx8"]
+[ext_resource type="AudioStream" uid="uid://dgrs8gim875lh" path="res://Sounds/21_orc_damage_3.wav" id="11_j0r6k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvw8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_40qrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_23w2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dy6d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dy6d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_23w2g")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s0gds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_40qrw")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rt313")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yolo3")
+}],
+"loop": true,
+"name": &"Neutralize",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s0gds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_40qrw")
+}],
+"loop": false,
+"name": &"Walk",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4ux"]
+size = Vector2(24, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkcjr"]
+radius = 192.0
+
+[node name="Demon" type="CharacterBody2D"]
+script = ExtResource("1_abo0f")
+bullet = "fireball"
+shooting_speed = 5
+speed = 20
+damage_radius = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = SubResource("SpriteFrames_lvw8u")
+animation = &"Neutralize"
+autoplay = "Idle"
+frame_progress = 0.772373
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fs4ux")
+
+[node name="Chasing" type="Area2D" parent="."]
+visible = false
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chasing"]
+shape = SubResource("CircleShape2D_vkcjr")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Walk sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_uy1sc")
+bus = &"Sound"
+
+[node name="Attack sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_c0wx8")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="Pushing sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_0mq6b")
+bus = &"Sound"
+
+[node name="Damaged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_j0r6k")
+volume_db = -10.0
+bus = &"Sound"
+
+[node name="Attacking" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Attacking" to="." method="_on_attacking_timeout"]

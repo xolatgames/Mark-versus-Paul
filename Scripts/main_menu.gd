@@ -5,6 +5,8 @@ class_name MainMenu
 
 func _ready():
 	$"Options/Close".connect("pressed", Callable(self, "closeOptions"))
+	$"Options/Sound Set".value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Sound"))
+	$"Options/Music Set".value = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))
 
 
 func _process(delta):
@@ -13,7 +15,14 @@ func _process(delta):
 
 
 func _on_start_the_game_pressed():
+	GameStats.newGame()
 	get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")
+
+
+func _on_continue_pressed():
+	if FileAccess.file_exists("user://game.ini"):
+		GameStats.loadGame() 
+		get_tree().change_scene_to_file(GameStats.scene)
 
 
 func _on_options_pressed():

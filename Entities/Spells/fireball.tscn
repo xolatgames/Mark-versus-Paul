@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bh68tk48y6bwf"]
 
-[ext_resource type="Script" path="res://Scripts/Entities/Spells/fireball.gd" id="1_ngyvf"]
+[ext_resource type="Script" path="res://Scripts/Entities/Behavior/bullet.gd" id="1_ngyvf"]
 [ext_resource type="Texture2D" uid="uid://br35ses511vqs" path="res://Sprites/Spells Entities/Fireball.svg" id="1_talsx"]
 [ext_resource type="Texture2D" uid="uid://dtalviqie72k3" path="res://Textures/Light.svg" id="3_o63nr"]
 [ext_resource type="AudioStream" uid="uid://0a53447se328" path="res://Sounds/Fire_AttackF3.wav" id="4_brcbx"]
@@ -23,9 +23,12 @@ scale = Vector2(0.5, 0.5)
 shadow_enabled = true
 texture = ExtResource("3_o63nr")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_brcbx")
 autoplay = true
 bus = &"Sound"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -58,8 +58,8 @@ frame_progress = 0.776582
 shape = SubResource("CircleShape2D_w3m8e")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-3.8147e-06, -3.8147e-06)
-scale = Vector2(0.5, 0.5)
+position = Vector2(5.72205e-06, 5.72205e-06)
+scale = Vector2(0.625, 0.625)
 shadow_enabled = true
 texture = ExtResource("4_ss5re")
 

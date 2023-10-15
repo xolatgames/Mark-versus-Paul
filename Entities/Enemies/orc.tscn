@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://dvved1plpdfdh"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/melee.gd" id="1_gm7n3"]
+[ext_resource type="Texture2D" uid="uid://dhcffsiyu0lxt" path="res://Sprites/Enemies/Orc/Idle.svg" id="2_fbd04"]
+[ext_resource type="Texture2D" uid="uid://be5v124cv6s8q" path="res://Sprites/Enemies/Orc/Attack.svg" id="2_rwqfu"]
+[ext_resource type="Texture2D" uid="uid://dyx3nasuflfc1" path="res://Sprites/Enemies/Orc/Attack frame 2.svg" id="3_uh0u3"]
+[ext_resource type="Texture2D" uid="uid://buhp2edkwhgo0" path="res://Sprites/Enemies/Orc/Walk.svg" id="3_y0a6w"]
+[ext_resource type="Texture2D" uid="uid://d3gowrjehweqx" path="res://Sprites/Enemies/Orc/Attack frame 3.svg" id="4_ccqnn"]
+[ext_resource type="Texture2D" uid="uid://7de6l2003ikh" path="res://Sprites/Enemies/Orc/Neutralize.svg" id="6_6vbys"]
+[ext_resource type="Texture2D" uid="uid://cwoutiqvc8vo4" path="res://Sprites/Enemies/Orc/Neutralize frame 2.svg" id="7_sdola"]
+[ext_resource type="AudioStream" uid="uid://5fjyvum364d5" path="res://Sounds/Footsteps_Walk_Grass_Mono_02.wav" id="9_yxjs2"]
+[ext_resource type="AudioStream" uid="uid://bjx3p1uunalsr" path="res://Sounds/07_human_atk_sword_1.wav" id="10_aog8v"]
+[ext_resource type="AudioStream" uid="uid://dihnpc6njtg2p" path="res://Sounds/03_crate_open_1.wav" id="10_n44ty"]
+[ext_resource type="AudioStream" uid="uid://dgrs8gim875lh" path="res://Sounds/21_orc_damage_3.wav" id="12_jtd8q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhht2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rwqfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uh0u3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ccqnn")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fbd04")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6vbys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sdola")
+}],
+"loop": true,
+"name": &"Neutralize",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fbd04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y0a6w")
+}],
+"loop": false,
+"name": &"Walk",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4ux"]
+size = Vector2(24, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkbdn"]
+radius = 192.0
+
+[node name="Orc" type="CharacterBody2D"]
+script = ExtResource("1_gm7n3")
+speed = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, -16)
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = SubResource("SpriteFrames_uhht2")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fs4ux")
+
+[node name="Chasing" type="Area2D" parent="."]
+visible = false
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chasing"]
+shape = SubResource("CircleShape2D_gkbdn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Walk sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_yxjs2")
+bus = &"Sound"
+
+[node name="Attack sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_aog8v")
+bus = &"Sound"
+
+[node name="Pushing sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_n44ty")
+bus = &"Sound"
+
+[node name="Damaged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_jtd8q")
+bus = &"Sound"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

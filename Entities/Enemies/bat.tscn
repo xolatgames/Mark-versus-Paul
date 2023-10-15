@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://g7thusblf1f8"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/melee.gd" id="1_sjry1"]
+[ext_resource type="Texture2D" uid="uid://c84b08c8nqv1y" path="res://Sprites/Spells Entities/Bat frame 2.svg" id="2_xvl7p"]
+[ext_resource type="Texture2D" uid="uid://j8j7qqma8a1h" path="res://Sprites/Spells Entities/Bat.svg" id="3_thi7u"]
+[ext_resource type="Texture2D" uid="uid://bsjyppvge7x44" path="res://Textures/empty.tres" id="4_io0e4"]
+[ext_resource type="AudioStream" uid="uid://1th6yj8snb8i" path="res://Sounds/35_Miss_Evade_02.wav" id="4_vp1pp"]
+[ext_resource type="AudioStream" uid="uid://kcglvkwqsovy" path="res://Sounds/EatingFood3.wav" id="5_0nc8r"]
+[ext_resource type="AudioStream" uid="uid://dc6frq6gb6ipg" path="res://Sounds/11_human_damage_3.wav" id="7_fwe5u"]
+[ext_resource type="AudioStream" uid="uid://dihnpc6njtg2p" path="res://Sounds/03_crate_open_1.wav" id="11_uxoak"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_avqkr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xvl7p")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_thi7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xvl7p")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_io0e4")
+}],
+"loop": true,
+"name": &"Neutralize",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_thi7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xvl7p")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fs4ux"]
+size = Vector2(24, 24)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkbdn"]
+radius = 192.0
+
+[node name="Bat" type="CharacterBody2D"]
+script = ExtResource("1_sjry1")
+speed = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+sprite_frames = SubResource("SpriteFrames_avqkr")
+animation = &"Neutralize"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fs4ux")
+
+[node name="Chasing" type="Area2D" parent="."]
+visible = false
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chasing"]
+shape = SubResource("CircleShape2D_gkbdn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Walk sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_vp1pp")
+bus = &"Sound"
+
+[node name="Attack sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0nc8r")
+bus = &"Sound"
+
+[node name="Pushing sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_uxoak")
+bus = &"Sound"
+
+[node name="Damaged" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fwe5u")
+bus = &"Sound"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
