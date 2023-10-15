@@ -4,20 +4,18 @@ The action-adventure game where you play as Mark. You are the wizard and can spe
 
 Music by timbeek.com
 
-https://github.com/xolatgames/Mark-versus-Paul/assets/64919860/b2ec3b11-259d-4b6f-9bc9-ab1b93867dee
+https://github.com/xolatgames/Mark-versus-Paul/assets/64919860/709513ab-d556-4f5b-a610-aa3651f15199
 
-We already have:
+We have:
 
-> Move, do somersaults and cast any of the eight spells (4 will be available with the cheat!)
+> Move, do somersaults and cast any of the eight spells
 
-> Main menu, tutorial and three absolutely playable levels!
+> Seven playable levels and one mini-game
 
-> Cheat's console with 5 varieties of the cheats!
+> Cheat console with 6 varieties of cheats!
 
-> Melee and Ranger enemies!
+> Orcs, zombies, fishes, demons and so much more!
 
 > Sound and music effects, and setup volume of them
 
-> The story is continues!
-
-That's it! Yet...
+> The story has finished soon!
