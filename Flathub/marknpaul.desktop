@@ -1,18 +1,9 @@
 [Desktop Entry]
 Categories=Game;
-Comment[ru_RU]=
-Comment=
 Exec=marknpaul
-GenericName[ru_RU]=
-GenericName=
 Icon=io.xolatgames.marknpaul
-MimeType=
-Name[ru_RU]=Mark versus Paul
 Name=Mark versus Paul
-Path=
-StartupNotify=true
+Name=Mark versus Paul
+Path=/app/bin/
 Terminal=false
-TerminalOptions=
-Type=Application
-X-KDE-SubstituteUID=false
-X-KDE-Username=
+Type=Game
