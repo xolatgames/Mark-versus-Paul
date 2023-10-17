@@ -3,7 +3,6 @@ Categories=Game;
 Exec=marknpaul
 Icon=io.xolatgames.marknpaul
 Name=Mark versus Paul
-Name=Mark versus Paul
 Path=/app/bin/
 Terminal=false
 Type=Game
