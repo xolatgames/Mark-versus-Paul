@@ -2,7 +2,7 @@
 Categories=Game;
 Comment[ru_RU]=
 Comment=
-Exec='flatpak run io.xolatgames.marknpaul'
+Exec=marknpaul
 GenericName[ru_RU]=
 GenericName=
 Icon=io.xolatgames.marknpaul
