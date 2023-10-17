@@ -1,8 +1,6 @@
 [Desktop Entry]
-Categories=Game;
-Exec=marknpaul
-Icon=io.xolatgames.marknpaul
 Name=Mark versus Paul
-Path=/app/bin/
-Terminal=false
+Exec=marknpaul
 Type=Application
+Icon=io.xolatgames.marknpaul
+Categories=Game
