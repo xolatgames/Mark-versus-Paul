@@ -1,6 +1,18 @@
 [Desktop Entry]
-Name=Mark versus Paul
-Exec=io.xolatgames.marknpaul
-Type=Application
-Icon=io.xolatgames.marknpaul
 Categories=Game;
+Comment[ru_RU]=
+Comment=
+Exec='flatpak run io.xolatgames.marknpaul'
+GenericName[ru_RU]=
+GenericName=
+Icon=io.xolatgames.marknpaul
+MimeType=
+Name[ru_RU]=Mark versus Paul
+Name=Mark versus Paul
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
