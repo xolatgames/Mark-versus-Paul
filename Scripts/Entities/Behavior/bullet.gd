@@ -22,11 +22,15 @@ func _on_body_entered(body):
 			body.takeDamage(damage)
 			queue_free()
 		
-		if !body is Enemy:
+		if !body is Enemy and !body is Paul:
 			queue_free()
+		
 	else:
 		if body is Enemy:
 			body.damaging(damage)
+		
+		if body is Paul:
+			body.takeDamage(damage)
 		
 		if !body is Mark:
 			queue_free()

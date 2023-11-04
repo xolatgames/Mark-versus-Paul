@@ -1,6 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://du4wwrdsvccxf"]
+[gd_scene load_steps=13 format=3 uid="uid://du4wwrdsvccxf"]
 
+[ext_resource type="Script" path="res://Scripts/the_end.gd" id="1_c1qb4"]
 [ext_resource type="AudioStream" uid="uid://1ns6cnsrff58" path="res://Music/New Road Loop.ogg" id="1_cbldu"]
+[ext_resource type="Texture2D" uid="uid://fdtohlq063ph" path="res://Sprites/Mark with smile/Wink.svg" id="1_eo6gs"]
+[ext_resource type="Texture2D" uid="uid://cumiwaay0u5vq" path="res://Sprites/Mark with smile/Wink frame 2.svg" id="2_l2eb5"]
+[ext_resource type="Texture2D" uid="uid://bxc8sukkl4etk" path="res://Sprites/Mark with smile/Wink frame 3.svg" id="3_fsja2"]
+[ext_resource type="Texture2D" uid="uid://bcmhw0aj070j6" path="res://Sprites/Mark with smile/Wink frame 4.svg" id="4_1sr4f"]
 
 [sub_resource type="Gradient" id="Gradient_v51ti"]
 colors = PackedColorArray(0, 0, 0, 1, 0.212305, 0.212305, 0.212305, 1)
@@ -9,20 +14,111 @@ colors = PackedColorArray(0, 0, 0, 1, 0.212305, 0.212305, 0.212305, 1)
 gradient = SubResource("Gradient_v51ti")
 fill_to = Vector2(0, 1)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ns1x7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eo6gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l2eb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fsja2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1sr4f")
+}],
+"loop": false,
+"name": &"Wink",
+"speed": 1.0
+}]
+
 [sub_resource type="Animation" id="Animation_rli3u"]
 resource_name = "Fade In"
-length = 5.0
+length = 70.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/path = NodePath("Credits:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.2, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 60),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(0, 656), Vector2(0, -1152)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Thanks for playing:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(65, 66)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Thanks for playing:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(65, 66)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Thanks for playing:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(65, 66)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Thanks for playing:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(65, 66)
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Thanks for playing/Mark")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(65),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"Wink", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Quit:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 70),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_iu0im"]
@@ -30,14 +126,70 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/path = NodePath("Credits:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(0, 656)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Thanks for playing:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Thanks for playing:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Thanks for playing:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Thanks for playing:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Quit:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_drubk"]
@@ -51,6 +203,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_c1qb4")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -58,16 +211,225 @@ offset_right = 1024.0
 offset_bottom = 672.0
 texture = SubResource("GradientTexture2D_0afva")
 
-[node name="Label" type="Label" parent="."]
-self_modulate = Color(1, 1, 1, 0)
+[node name="Credits" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 656.0
+offset_right = 40.0
+offset_bottom = 696.001
+
+[node name="Main Developer" type="Label" parent="Credits"]
 layout_mode = 0
-offset_left = 256.0
-offset_right = 800.0
-offset_bottom = 640.0
-text = "Thanks for playing pre-release BETA! Paul will return the package soon!"
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 992.0
+offset_bottom = 80.0
+text = "Main Developer:"
+
+[node name="Person" type="Label" parent="Credits/Main Developer"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 928.0
+offset_bottom = 96.0
+text = "xolatgames"
+
+[node name="Music by" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 160.0
+offset_right = 992.0
+offset_bottom = 208.0
+text = "Music by"
+horizontal_alignment = 2
+
+[node name="Person" type="Label" parent="Credits/Music by"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 928.0
+offset_bottom = 96.0
+text = "timbeek.com"
+horizontal_alignment = 2
+
+[node name="Font" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 288.0
+offset_right = 992.0
+offset_bottom = 336.0
+text = "This Font:"
+
+[node name="Person" type="Label" parent="Credits/Font"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 928.0
+offset_bottom = 96.0
+text = "Sora Sagano"
+
+[node name="Sounds" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 416.0
+offset_right = 992.0
+offset_bottom = 464.0
+text = "Sounds:"
+horizontal_alignment = 2
+
+[node name="Person #1" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 928.0
+offset_bottom = 96.0
+text = "FilmCow"
+horizontal_alignment = 2
+
+[node name="Person #2" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 928.0
+offset_bottom = 144.0
+text = "Nox_Sound"
+horizontal_alignment = 2
+
+[node name="Person #3" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 928.0
+offset_bottom = 192.0
+text = "Tim"
+horizontal_alignment = 2
+
+[node name="Person #4" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 192.0
+offset_right = 928.0
+offset_bottom = 240.0
+text = "Leophaz"
+horizontal_alignment = 2
+
+[node name="Person #5" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 240.0
+offset_right = 928.0
+offset_bottom = 288.0
+text = "TerrorByteGames"
+horizontal_alignment = 2
+
+[node name="Person #6" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 288.0
+offset_right = 928.0
+offset_bottom = 336.0
+text = "John"
+horizontal_alignment = 2
+
+[node name="Person #7" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 336.0
+offset_right = 928.0
+offset_bottom = 384.0
+text = "Mayra"
+horizontal_alignment = 2
+
+[node name="Person #8" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 384.0
+offset_right = 928.0
+offset_bottom = 432.0
+text = "Darkworld Audio"
+horizontal_alignment = 2
+
+[node name="Person #9" type="Label" parent="Credits/Sounds"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 432.0
+offset_right = 928.0
+offset_bottom = 480.0
+text = "Eilr"
+horizontal_alignment = 2
+
+[node name="Soft" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 912.0
+offset_right = 992.0
+offset_bottom = 960.0
+text = "Soft:"
+
+[node name="Program #1" type="Label" parent="Credits/Soft"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 48.0
+offset_right = 928.0
+offset_bottom = 96.0
+text = "Godot Engine 4"
+
+[node name="Program #2" type="Label" parent="Credits/Soft"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 928.0
+offset_bottom = 144.0
+text = "InkScape"
+
+[node name="Program #3" type="Label" parent="Credits/Soft"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 928.0
+offset_bottom = 192.0
+text = "GitHub Desktop"
+
+[node name="Program #4" type="Label" parent="Credits/Soft"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 192.0
+offset_right = 928.0
+offset_bottom = 240.0
+text = "Firefox :D"
+
+[node name="Thanks for playing" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = 60.0
+offset_right = 972.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Thanks for playing! You have become the Wizard!"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+
+[node name="Mark" type="AnimatedSprite2D" parent="Thanks for playing"]
+position = Vector2(480, 176)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ns1x7")
+animation = &"Wink"
+frame = 3
+frame_progress = 1.0
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 544.0
+offset_right = 992.0
+offset_bottom = 584.0
+mouse_default_cursor_shape = 2
+text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Fade In"
@@ -79,3 +441,5 @@ libraries = {
 stream = ExtResource("1_cbldu")
 autoplay = true
 bus = &"Music"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

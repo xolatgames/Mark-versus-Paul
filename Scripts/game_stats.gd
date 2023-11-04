@@ -20,6 +20,8 @@ const confuse_time = 5
 var undead = false
 var scene = "res://Scenes/tutorial.tscn"
 var air_left = 120.0
+var boss_health = 300.0
+var boss_max_health = 300.0
 
 
 func _process(delta):
@@ -46,6 +48,8 @@ func newGame():
 	level = 0
 	choosed_spell = 1
 	opened_spells = []
+	boss_health = 300.0
+	boss_max_health = 300.0
 	scene = "res://Scenes/tutorial.tscn"
 
 
@@ -64,6 +68,8 @@ func loadGame():
 	mana = max_mana
 	already_spelling = false
 	healing_delay_left = 0
+	boss_health = 2000.0
+	boss_max_health = 2000.0
 	
 	scene = conf.get_value("game", "scene", "res://Scenes/tutorial.tscn")
 

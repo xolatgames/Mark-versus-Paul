@@ -1,5 +1,13 @@
 extends Node2D
 
+class_name Trigggers
+
+@export var start_trigger = 0
+
+
+func _ready():
+	callTheTrigger(start_trigger)
+
 
 func _on_trigger_body_entered(body, trig):
 	if body is Mark:
@@ -45,3 +53,33 @@ func callTheTrigger(trig):
 			GameStats.saveGame()
 			await get_tree().process_frame
 			get_tree().change_scene_to_file("res://Scenes/volcano.tscn")
+		7:
+			GameStats.showDialog("Mark", load("res://Sprites/Dancing/Characters/Mark/Dancing.svg"), "Where is my package, Paul?")
+			$Timer.start()
+			await  $Timer.timeout
+			GameStats.showDialog("Paul", load("res://Sprites/Paul/Idle.svg"), "What's the difference? I don't give it you!")
+			$Paul.start()
+			$"Trigger #1".queue_free()
+		8:
+			$Timer.start(10)
+			await  $Timer.timeout
+			GameStats.showDialog("Mark", load("res://Sprites/Dancing/Characters/Mark/Dancing.svg"), "Don't be fool, Paul! Give me that package!")
+			$Timer.start(5)
+			await  $Timer.timeout
+			GameStats.showDialog("Paul", load("res://Sprites/Paul/Idle.svg"), "Take it! And give me alone, finally!")
+			$Paul.speed = Vector2(0, -300)
+			$"The Package".show()
+			$Timer.start(5)
+			await  $Timer.timeout
+			GameStats.showDialog("Mark", load("res://Sprites/Dancing/Characters/Mark/Dancing.svg"), "What's the inside?")
+			$"The Package".hide()
+			$Timer.start(5)
+			await  $Timer.timeout
+			$Music.stop()
+			GameStats.showDialog("Mark", load("res://Sprites/Dancing/Characters/Mark/Dancing.svg"), "Nothing!")
+			$Timer.start(5)
+			await  $Timer.timeout
+			GameStats.showDialog("Mark", load("res://Sprites/Dancing/Characters/Mark/Dancing.svg"), "LOL!")
+			$Timer.start(10)
+			await  $Timer.timeout
+			get_tree().change_scene_to_file("res://Scenes/the_end.tscn")

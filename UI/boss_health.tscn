@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dflve8vl58tej"]
+
+[ext_resource type="Script" path="res://Scripts/Game UI/boss_health.gd" id="1_75m2r"]
+[ext_resource type="Texture2D" uid="uid://c14p1ofro0deh" path="res://Sprites/Game UI/Bars/Hollow.svg" id="1_fqjor"]
+[ext_resource type="Texture2D" uid="uid://ck1xe1bbydnlt" path="res://Sprites/Game UI/Bars/Boss.svg" id="2_cw5qc"]
+
+[node name="Boss Health" type="CanvasLayer"]
+script = ExtResource("1_75m2r")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 912.0
+offset_top = 16.0
+offset_right = 981.0
+offset_bottom = 56.0
+text = "Boss:"
+
+[node name="Bar" type="TextureProgressBar" parent="."]
+offset_left = 752.0
+offset_top = 48.0
+offset_right = 1008.0
+offset_bottom = 112.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_fqjor")
+texture_progress = ExtResource("2_cw5qc")

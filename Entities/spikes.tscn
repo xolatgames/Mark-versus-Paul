@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://me8eslqnwlbe"]
+
+[ext_resource type="Texture2D" uid="uid://oyjs2hve683o" path="res://Sprites/Entities/Spikes 2.svg" id="1_ls7um"]
+[ext_resource type="Script" path="res://Scripts/Entities/spikes_2.gd" id="1_wo75r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dokrf"]
+size = Vector2(24, 24)
+
+[node name="Spikes" type="Area2D"]
+script = ExtResource("1_wo75r")
+speed = Vector2(0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("1_ls7um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dokrf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

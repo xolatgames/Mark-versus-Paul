@@ -1,9 +1,8 @@
-extends Flipping
+extends ChangingDirection
 
 class_name Bat
 
 var speed = 100
-var direction = 0
 var health = 20
 
 
@@ -30,8 +29,3 @@ func takeDamage(damage):
 
 func _on_change_direction_timeout():
 	changeDirection()
-
-
-func changeDirection():
-	randomize()
-	direction = randi()%360

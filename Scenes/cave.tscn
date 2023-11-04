@@ -40,7 +40,7 @@ script = ExtResource("3_gnpku")
 [node name="Game UI" parent="." instance=ExtResource("2_dbdc3")]
 
 [node name="Mark" parent="." instance=ExtResource("3_bkuor")]
-position = Vector2(16, 50)
+position = Vector2(17, 47)
 
 [node name="Scroll" parent="." instance=ExtResource("9_hrrre")]
 position = Vector2(51, 49)
@@ -77,9 +77,9 @@ position = Vector2(1011, 598)
 scene = "factory"
 
 [node name="Tip #1" type="Label" parent="."]
-offset_left = 96.0
+offset_left = 64.0
 offset_top = -128.0
-offset_right = 256.0
+offset_right = 288.0
 offset_bottom = -44.0
 theme = ExtResource("7_0vshg")
 theme_override_colors/font_color = Color(1, 1, 1, 1)

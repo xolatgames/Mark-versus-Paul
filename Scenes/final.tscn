@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://bqpoa6rbwrao2"]
+
+[ext_resource type="TileSet" uid="uid://dyuaj2bnlk2f4" path="res://TileMaps/backgrounds.tres" id="1_c0aug"]
+[ext_resource type="Script" path="res://Scripts/triggers.gd" id="1_ok6rh"]
+[ext_resource type="SpriteFrames" uid="uid://lxjl8lvhom4k" path="res://SpriteFrames/paul.tres" id="2_6i501"]
+[ext_resource type="Texture2D" uid="uid://b0n1nmejsjmhx" path="res://Sprites/Mark/Body/Idle.svg" id="2_6nm4u"]
+[ext_resource type="Texture2D" uid="uid://cgghkaspae67d" path="res://Sprites/Mark/Hand/Spelling.svg" id="3_j4j67"]
+[ext_resource type="PackedScene" uid="uid://vvf028rd583w" path="res://UI/game_ui.tscn" id="3_pd6br"]
+[ext_resource type="Script" path="res://Scripts/Entities/Behavior/running.gd" id="4_g0b5d"]
+[ext_resource type="Texture2D" uid="uid://b1ms526amiryf" path="res://Sprites/Entities/The Package.svg" id="8_fjt1d"]
+[ext_resource type="AudioStream" uid="uid://2tb1sb0c2wwa" path="res://Music/The Mountains Loop.ogg" id="9_8tbr2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f8l7"]
+size = Vector2(64, 74)
+
+[node name="Final" type="Node2D"]
+script = ExtResource("1_ok6rh")
+start_trigger = 8
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(0.125, 0.125)
+tile_set = ExtResource("1_c0aug")
+format = 2
+layer_0/name = "background"
+layer_0/tile_data = PackedInt32Array(0, 39, 0, 65536, 39, 0, 131072, 39, 0, 196608, 39, 0, 262144, 39, 0, 327680, 39, 0, 393216, 39, 0, 458752, 39, 0, 524288, 39, 0, 589824, 39, 0, 655360, 39, 0, 1, 39, 0, 65537, 39, 0, 131073, 39, 0, 196609, 39, 0, 262145, 39, 0, 327681, 39, 0, 393217, 39, 0, 458753, 39, 0, 524289, 39, 0, 589825, 39, 0, 655361, 39, 0, 2, 39, 0, 65538, 39, 0, 131074, 39, 0, 196610, 39, 0, 262146, 39, 0, 327682, 39, 0, 393218, 39, 0, 458754, 39, 0, 524290, 39, 0, 589826, 39, 0, 655362, 39, 0, 3, 39, 0, 65539, 39, 0, 131075, 39, 0, 196611, 39, 0, 262147, 39, 0, 327683, 39, 0, 393219, 39, 0, 458755, 39, 0, 524291, 39, 0, 589827, 39, 0, 655363, 39, 0, 4, 39, 0, 65540, 39, 0, 131076, 39, 0, 196612, 39, 0, 262148, 39, 0, 327684, 39, 0, 393220, 39, 0, 458756, 39, 0, 524292, 39, 0, 589828, 39, 0, 655364, 39, 0, 5, 39, 0, 65541, 39, 0, 131077, 39, 0, 196613, 39, 0, 262149, 39, 0, 327685, 39, 0, 393221, 39, 0, 458757, 39, 0, 524293, 39, 0, 589829, 39, 0, 655365, 39, 0, 6, 39, 0, 65542, 39, 0, 131078, 39, 0, 196614, 39, 0, 262150, 39, 0, 327686, 39, 0, 393222, 39, 0, 458758, 39, 0, 524294, 39, 0, 589830, 39, 0, 655366, 39, 0, 7, 39, 0, 65543, 39, 0, 131079, 39, 0, 196615, 39, 0, 262151, 39, 0, 327687, 39, 0, 393223, 39, 0, 458759, 39, 0, 524295, 39, 0, 589831, 39, 0, 655367, 39, 0, 8, 39, 0, 65544, 39, 0, 131080, 39, 0, 196616, 39, 0, 262152, 39, 0, 327688, 39, 0, 393224, 39, 0, 458760, 39, 0, 524296, 39, 0, 589832, 39, 0, 655368, 39, 0, 9, 39, 0, 65545, 39, 0, 131081, 39, 0, 196617, 39, 0, 262153, 39, 0, 327689, 39, 0, 393225, 39, 0, 458761, 39, 0, 524297, 39, 0, 589833, 39, 0, 655369, 39, 0, 10, 39, 0, 65546, 39, 0, 131082, 39, 0, 196618, 39, 0, 262154, 39, 0, 327690, 39, 0, 393226, 39, 0, 458762, 39, 0, 524298, 39, 0, 589834, 39, 0, 655370, 39, 0, 11, 39, 0, 65547, 39, 0, 131083, 39, 0, 196619, 39, 0, 262155, 39, 0, 327691, 39, 0, 393227, 39, 0, 458763, 39, 0, 524299, 39, 0, 589835, 39, 0, 655371, 39, 0, 12, 39, 0, 65548, 39, 0, 131084, 39, 0, 196620, 39, 0, 262156, 39, 0, 327692, 39, 0, 393228, 39, 0, 458764, 39, 0, 524300, 39, 0, 589836, 39, 0, 655372, 39, 0, 13, 39, 0, 65549, 39, 0, 131085, 39, 0, 196621, 39, 0, 262157, 39, 0, 327693, 39, 0, 393229, 39, 0, 458765, 39, 0, 524301, 39, 0, 589837, 39, 0, 655373, 39, 0, 14, 39, 0, 65550, 39, 0, 131086, 39, 0, 196622, 39, 0, 262158, 39, 0, 327694, 39, 0, 393230, 39, 0, 458766, 39, 0, 524302, 39, 0, 589838, 39, 0, 655374, 39, 0, 15, 39, 0, 65551, 39, 0, 131087, 39, 0, 196623, 39, 0, 262159, 39, 0, 327695, 39, 0, 393231, 39, 0, 458767, 39, 0, 524303, 39, 0, 589839, 39, 0, 655375, 39, 0)
+layer_1/name = "decor"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(0, 36, 0, 1, 36, 0, 2, 36, 0, 3, 36, 0, 4, 36, 0, 5, 34, 0, 6, 36, 0, 7, 36, 0, 8, 36, 0, 9, 36, 0, 10, 34, 0, 11, 36, 0, 12, 36, 0, 13, 36, 0, 14, 36, 0, 15, 36, 0, 655360, 36, 0, 655361, 36, 0, 655362, 36, 0, 655363, 36, 0, 655364, 36, 0, 655365, 34, 0, 655366, 36, 0, 655367, 36, 0, 655368, 36, 0, 655369, 36, 0, 655370, 34, 0, 655371, 36, 0, 655372, 36, 0, 655373, 36, 0, 655374, 36, 0, 655375, 36, 0, 589839, 36, 0, 524303, 36, 0, 458767, 36, 0, 393231, 36, 0, 327695, 36, 0, 262159, 36, 0, 196623, 36, 0, 131087, 36, 0, 65551, 36, 0, 65536, 36, 0, 131072, 36, 0, 196608, 36, 0, 262144, 36, 0, 327680, 36, 0, 393216, 36, 0, 458752, 36, 0, 524288, 36, 0, 589824, 36, 0, 65537, 36, 0, 131073, 36, 0, 196609, 36, 0, 262145, 36, 0, 327681, 36, 0, 393217, 36, 0, 458753, 36, 0, 524289, 36, 0, 589825, 36, 0, 65550, 36, 0, 131086, 36, 0, 196622, 36, 0, 262158, 36, 0, 327694, 36, 0, 393230, 36, 0, 458766, 36, 0, 524302, 36, 0, 589838, 36, 0, 65549, 36, 0, 131085, 36, 0, 196621, 36, 0, 262157, 36, 0, 327693, 36, 0, 393229, 36, 0, 458765, 36, 0, 524301, 36, 0, 589837, 36, 0, 65538, 36, 0, 131074, 36, 0, 196610, 36, 0, 262146, 36, 0, 327682, 36, 0, 393218, 36, 0, 458754, 36, 0, 524290, 36, 0, 589826, 36, 0)
+layer_2/name = "fires"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array(65539, 13, 0, 131075, 13, 0, 196611, 13, 0, 262147, 13, 0, 327683, 13, 0, 393219, 13, 0, 458755, 13, 0, 524291, 13, 0, 589827, 13, 0, 589828, 13, 0, 589829, 13, 0, 589830, 13, 0, 589831, 13, 0, 589832, 13, 0, 589833, 13, 0, 589834, 13, 0, 589835, 13, 0, 589836, 13, 0, 524300, 13, 0, 458764, 13, 0, 393228, 13, 0, 327692, 13, 0, 262156, 13, 0, 196620, 13, 0, 131084, 13, 0, 65548, 13, 0, 65547, 13, 0, 65546, 13, 0, 65545, 13, 0, 65544, 13, 0, 65543, 13, 0, 65542, 13, 0, 65541, 13, 0, 65540, 13, 0)
+
+[node name="Game UI" parent="." instance=ExtResource("3_pd6br")]
+
+[node name="Paul" type="CharacterBody2D" parent="."]
+position = Vector2(512, 192)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("4_g0b5d")
+
+[node name="Paul" type="AnimatedSprite2D" parent="Paul"]
+position = Vector2(0, -32)
+scale = Vector2(0.125, 0.125)
+sprite_frames = ExtResource("2_6i501")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paul"]
+shape = SubResource("RectangleShape2D_4f8l7")
+
+[node name="Mark" type="Sprite2D" parent="."]
+position = Vector2(512, 512)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_6nm4u")
+
+[node name="Wand" type="Sprite2D" parent="Mark"]
+texture = ExtResource("3_j4j67")
+
+[node name="The Package" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(512, 448)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("8_fjt1d")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_8tbr2")
+autoplay = true
+bus = &"Music"

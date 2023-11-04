@@ -32,6 +32,10 @@ func _on_enter_the_code_text_submitted(cheat):
 		"level up!":
 			GameStats.levelUp()
 			print("cheat activated!")
+		"extra strong":
+			for i in range(10):
+				GameStats.levelUp()
+			print("cheat activated!")
 	
 	$"Enter the Code".text = ""
 	hide()

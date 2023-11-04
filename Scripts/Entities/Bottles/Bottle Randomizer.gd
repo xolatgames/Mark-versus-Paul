@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name BottleRaandomizer
+class_name BottleRandomizer
 
 
 func _process(delta):

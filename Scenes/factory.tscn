@@ -362,7 +362,7 @@ position = Vector2(1472, 1216)
 
 [node name="Portal" parent="." instance=ExtResource("9_s04qx")]
 position = Vector2(512, 512)
-scene = "the_end"
+scene = "boss_level"
 
 [node name="Tip #1" type="Label" parent="."]
 offset_left = 416.0

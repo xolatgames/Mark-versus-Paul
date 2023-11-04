@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://lxjl8lvhom4k"]
 
-[ext_resource type="Texture2D" uid="uid://cc0javpms1k4m" path="res://Sprites/NPC/Paul/Paul.svg" id="1_8lynd"]
-[ext_resource type="Texture2D" uid="uid://bpmlbj174ljj0" path="res://Sprites/NPC/Paul/Paul frame 2.svg" id="2_5cgrs"]
+[ext_resource type="Texture2D" uid="uid://cc0javpms1k4m" path="res://Sprites/Paul with the package/Paul.svg" id="1_8lynd"]
+[ext_resource type="Texture2D" uid="uid://bpmlbj174ljj0" path="res://Sprites/Paul with the package/Paul frame 2.svg" id="2_5cgrs"]
 
 [resource]
 animations = [{
