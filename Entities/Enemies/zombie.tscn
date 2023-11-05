@@ -1,30 +1,30 @@
 [gd_scene load_steps=17 format=3 uid="uid://cg8sibnliokhq"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/melee.gd" id="1_tleyj"]
-[ext_resource type="Texture2D" uid="uid://cg7kf3whna6lv" path="res://Sprites/Enemies/Zombie/Attack.svg" id="2_rymxm"]
-[ext_resource type="Texture2D" uid="uid://f3tv8mpsuh6q" path="res://Sprites/Enemies/Zombie/Attack frame 2.svg" id="3_g5h2c"]
-[ext_resource type="Texture2D" uid="uid://choyia1s8kthj" path="res://Sprites/Enemies/Zombie/Attack frame 3.svg" id="4_04upa"]
-[ext_resource type="Texture2D" uid="uid://dijfrsn0xrjhh" path="res://Sprites/Enemies/Zombie/Idle.svg" id="5_1h8ti"]
-[ext_resource type="Texture2D" uid="uid://c1qn4ambisqd3" path="res://Sprites/Enemies/Zombie/Neutralize.svg" id="6_ed0xi"]
-[ext_resource type="Texture2D" uid="uid://bb3ouyp7cd045" path="res://Sprites/Enemies/Zombie/Neutralize frame 2.svg" id="7_xaat8"]
-[ext_resource type="Texture2D" uid="uid://cl0v35t813gpo" path="res://Sprites/Enemies/Zombie/Walk.svg" id="8_djwd4"]
+[ext_resource type="Texture2D" uid="uid://cg7kf3whna6lv" path="res://Sprites/Enemies/Zombie/Attack.svg" id="2_ucl1q"]
+[ext_resource type="Texture2D" uid="uid://f3tv8mpsuh6q" path="res://Sprites/Enemies/Zombie/Attack frame 2.svg" id="3_8b01e"]
+[ext_resource type="Texture2D" uid="uid://choyia1s8kthj" path="res://Sprites/Enemies/Zombie/Attack frame 3.svg" id="4_dseaa"]
+[ext_resource type="Texture2D" uid="uid://dijfrsn0xrjhh" path="res://Sprites/Enemies/Zombie/Idle.svg" id="5_gyxps"]
+[ext_resource type="Texture2D" uid="uid://c1qn4ambisqd3" path="res://Sprites/Enemies/Zombie/Neutralize.svg" id="6_ui6xh"]
+[ext_resource type="Texture2D" uid="uid://bb3ouyp7cd045" path="res://Sprites/Enemies/Zombie/Neutralize frame 2.svg" id="7_p4de6"]
+[ext_resource type="Texture2D" uid="uid://cl0v35t813gpo" path="res://Sprites/Enemies/Zombie/Walk.svg" id="8_lvcdc"]
 [ext_resource type="AudioStream" uid="uid://5fjyvum364d5" path="res://Sounds/Footsteps_Walk_Grass_Mono_02.wav" id="9_bw0y6"]
 [ext_resource type="AudioStream" uid="uid://f6o0y6fri764" path="res://Sounds/zombie_massacre_vocal_attack_medium_01.wav" id="9_kbyyk"]
 [ext_resource type="AudioStream" uid="uid://dihnpc6njtg2p" path="res://Sounds/03_crate_open_1.wav" id="11_f6au5"]
 [ext_resource type="AudioStream" uid="uid://1th6yj8snb8i" path="res://Sounds/35_Miss_Evade_02.wav" id="11_t6ruc"]
 [ext_resource type="AudioStream" uid="uid://cstwaw2v4tog7" path="res://Sounds/zombie_massacre_head_smash_06.wav" id="13_s8uy1"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6yvj5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_664vl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rymxm")
+"texture": ExtResource("2_ucl1q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_g5h2c")
+"texture": ExtResource("3_8b01e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_04upa")
+"texture": ExtResource("4_dseaa")
 }],
 "loop": false,
 "name": &"Attack",
@@ -32,7 +32,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_1h8ti")
+"texture": ExtResource("5_gyxps")
 }],
 "loop": false,
 "name": &"Idle",
@@ -40,10 +40,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ed0xi")
+"texture": ExtResource("6_ui6xh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_xaat8")
+"texture": ExtResource("7_p4de6")
 }],
 "loop": true,
 "name": &"Neutralize",
@@ -51,10 +51,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_1h8ti")
+"texture": ExtResource("5_gyxps")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_djwd4")
+"texture": ExtResource("8_lvcdc")
 }],
 "loop": false,
 "name": &"Walk",
@@ -74,11 +74,9 @@ speed = 50
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-9.53674e-07, -16)
 scale = Vector2(0.0625, 0.0625)
-sprite_frames = SubResource("SpriteFrames_6yvj5")
-animation = &"Walk"
+sprite_frames = SubResource("SpriteFrames_664vl")
+animation = &"Attack"
 autoplay = "Idle"
-frame = 1
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_fs4ux")

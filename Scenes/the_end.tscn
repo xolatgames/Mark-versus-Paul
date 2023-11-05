@@ -1,11 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://du4wwrdsvccxf"]
+[gd_scene load_steps=29 format=3 uid="uid://du4wwrdsvccxf"]
 
 [ext_resource type="Script" path="res://Scripts/the_end.gd" id="1_c1qb4"]
 [ext_resource type="AudioStream" uid="uid://1ns6cnsrff58" path="res://Music/New Road Loop.ogg" id="1_cbldu"]
 [ext_resource type="Texture2D" uid="uid://fdtohlq063ph" path="res://Sprites/Mark with smile/Wink.svg" id="1_eo6gs"]
+[ext_resource type="Texture2D" uid="uid://b04m3wkswtk3a" path="res://Sprites/Enemies/Fish/Idle.svg" id="2_7gihi"]
+[ext_resource type="Texture2D" uid="uid://cus2suds04owj" path="res://Sprites/NPC/Peter/Peter.svg" id="2_cf6eg"]
 [ext_resource type="Texture2D" uid="uid://cumiwaay0u5vq" path="res://Sprites/Mark with smile/Wink frame 2.svg" id="2_l2eb5"]
 [ext_resource type="Texture2D" uid="uid://bxc8sukkl4etk" path="res://Sprites/Mark with smile/Wink frame 3.svg" id="3_fsja2"]
+[ext_resource type="Texture2D" uid="uid://ix0tqmo6gy3a" path="res://Sprites/NPC/Peter/Peter frame 2.svg" id="3_nn2d1"]
+[ext_resource type="Texture2D" uid="uid://ce5pnmscgacas" path="res://Sprites/Enemies/Fish/Walk.svg" id="3_rnfts"]
 [ext_resource type="Texture2D" uid="uid://bcmhw0aj070j6" path="res://Sprites/Mark with smile/Wink frame 4.svg" id="4_1sr4f"]
+[ext_resource type="Texture2D" uid="uid://cg5ig0or1rk8b" path="res://Sprites/Dancing/Characters/Orc/Dancing.svg" id="6_3hf8q"]
+[ext_resource type="Texture2D" uid="uid://cadkpxj0ehx6u" path="res://Sprites/Dancing/Characters/Orc/Idle.svg" id="7_amif7"]
+[ext_resource type="Texture2D" uid="uid://ccofentiv6awn" path="res://Sprites/Dancing/Characters/Orc/Dancing frame 3.svg" id="8_643bo"]
+[ext_resource type="Texture2D" uid="uid://sbcotb4v254u" path="res://Sprites/Dancing/Characters/Orc/Dancing frame 4.svg" id="9_c6h6a"]
+[ext_resource type="Texture2D" uid="uid://fmpeugu3t7uc" path="res://Sprites/Dancing/Characters/Orc/Dancing frame 5.svg" id="10_sd7ty"]
+[ext_resource type="Texture2D" uid="uid://ca0wiexw5r5cs" path="res://Sprites/Dancing/Characters/Orc/Dancing frame 6.svg" id="11_s0yc6"]
+[ext_resource type="Texture2D" uid="uid://cc0javpms1k4m" path="res://Sprites/Paul with the package/Paul.svg" id="12_2lpkh"]
+[ext_resource type="Texture2D" uid="uid://bpmlbj174ljj0" path="res://Sprites/Paul with the package/Paul frame 2.svg" id="13_h4no7"]
 
 [sub_resource type="Gradient" id="Gradient_v51ti"]
 colors = PackedColorArray(0, 0, 0, 1, 0.212305, 0.212305, 0.212305, 1)
@@ -13,6 +25,113 @@ colors = PackedColorArray(0, 0, 0, 1, 0.212305, 0.212305, 0.212305, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0afva"]
 gradient = SubResource("Gradient_v51ti")
 fill_to = Vector2(0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5mpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cf6eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nn2d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cf6eg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1st2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7gihi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rnfts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5784g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3hf8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_amif7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_643bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_amif7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3hf8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_amif7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_643bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c6h6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sd7ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s0yc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sd7ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c6h6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sd7ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s0yc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sd7ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c6h6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_643bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_amif7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgv6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_2lpkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h4no7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ns1x7"]
 animations = [{
@@ -233,6 +352,13 @@ offset_right = 928.0
 offset_bottom = 96.0
 text = "xolatgames"
 
+[node name="AnimatedSprite #1" type="AnimatedSprite2D" parent="Credits"]
+position = Vector2(896, -16)
+scale = Vector2(-0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_o5mpf")
+autoplay = "default"
+frame_progress = 0.318074
+
 [node name="Music by" type="Label" parent="Credits"]
 layout_mode = 0
 offset_left = 32.0
@@ -251,6 +377,14 @@ offset_bottom = 96.0
 text = "timbeek.com"
 horizontal_alignment = 2
 
+[node name="AnimatedSprite #2" type="AnimatedSprite2D" parent="Credits"]
+position = Vector2(96, 208)
+rotation = 3.14159
+scale = Vector2(-0.25, -0.25)
+sprite_frames = SubResource("SpriteFrames_1st2c")
+autoplay = "default"
+frame_progress = 0.205398
+
 [node name="Font" type="Label" parent="Credits"]
 layout_mode = 0
 offset_left = 32.0
@@ -266,6 +400,13 @@ offset_top = 48.0
 offset_right = 928.0
 offset_bottom = 96.0
 text = "Sora Sagano"
+
+[node name="AnimatedSprite #3" type="AnimatedSprite2D" parent="Credits"]
+position = Vector2(896, 272)
+scale = Vector2(-0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_5784g")
+autoplay = "default"
+frame_progress = 0.179739
 
 [node name="Sounds" type="Label" parent="Credits"]
 layout_mode = 0
@@ -356,6 +497,14 @@ offset_right = 928.0
 offset_bottom = 480.0
 text = "Eilr"
 horizontal_alignment = 2
+
+[node name="AnimatedSprite #4" type="AnimatedSprite2D" parent="Credits"]
+position = Vector2(96, 592)
+rotation = 3.14159
+scale = Vector2(-0.25, -0.25)
+sprite_frames = SubResource("SpriteFrames_lgv6s")
+autoplay = "default"
+frame_progress = 0.813162
 
 [node name="Soft" type="Label" parent="Credits"]
 layout_mode = 0

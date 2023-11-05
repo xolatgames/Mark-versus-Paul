@@ -8,8 +8,7 @@ var bullet = "fireball"
 var number_of_firering_bullets = 16
 var number_of_fireball_bullets = 3
 var enemy = "Enemies/robot"
-var robot_shooting_speed = 3
-var robot_spawning_time = 30
+var robot_spawning_time = 40
 
 
 func _process(delta):
