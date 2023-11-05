@@ -119,8 +119,6 @@ spawn_object = "Enemies/zombie"
 position = Vector2(1600, 1184)
 spawn_object = "Enemies/zombie"
 
-[node name="Zombies" type="Node2D" parent="."]
-
 [node name="Portal" parent="." instance=ExtResource("5_bvcbv")]
 position = Vector2(512, 584)
 scene = "underwater"
